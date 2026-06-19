@@ -36,27 +36,38 @@ export default {
     'Zinto Fitness': 'zinto-fitness'
   };
   function wireLinks() {
-    document.querySelectorAll('a').forEach(function(a) {
-      if (a.getAttribute('href') !== '#work') return;
-      var textEls = a.querySelectorAll('div');
-      for (var i = 0; i < textEls.length; i++) {
-        var t = textEls[i].textContent.trim();
-        if (slugs[t]) {
-          a.setAttribute('href', '/demos/' + slugs[t]);
+    var allLinks = document.querySelectorAll('a');
+    console.log('[KZN Debug] Total <a> tags found:', allLinks.length);
+    var hrefs = [];
+    allLinks.forEach(function(a) {
+      var h = a.getAttribute('href');
+      if (h) hrefs.push(h);
+    });
+    console.log('[KZN Debug] All hrefs:', JSON.stringify(hrefs.slice(0,30)));
+
+    // Try matching by text content in ANY link
+    allLinks.forEach(function(a) {
+      var text = a.textContent;
+      Object.keys(slugs).forEach(function(name) {
+        if (text.indexOf(name) !== -1) {
+          console.log('[KZN Debug] MATCH:', name, 'in link with href:', a.getAttribute('href'), 'tag:', a.tagName);
+          a.setAttribute('href', '/demos/' + slugs[name]);
           a.setAttribute('target', '_blank');
-          a.setAttribute('rel', 'noopener');
-          break;
         }
+      });
+    });
+
+    // Also fix "See all demos" link
+    allLinks.forEach(function(a) {
+      if (a.textContent.indexOf('See all demos') !== -1) {
+        console.log('[KZN Debug] Found See all demos link, href was:', a.getAttribute('href'));
+        a.setAttribute('href', '/demos/');
       }
     });
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function(){ setTimeout(wireLinks, 2000); });
-  } else {
-    setTimeout(wireLinks, 2000);
-  }
-  setTimeout(wireLinks, 4000);
+  setTimeout(wireLinks, 3000);
   setTimeout(wireLinks, 6000);
+  setTimeout(wireLinks, 10000);
 })();
 </script>`;
 
