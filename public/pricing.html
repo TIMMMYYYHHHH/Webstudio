@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Monthly Plans — KZN Web Studio</title>
 <link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -70,6 +72,10 @@ a{color:inherit;text-decoration:none}
   .plans{grid-template-columns:1fr;max-width:420px}
   .hero h1{font-size:2rem}
   .inc-grid,.t-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.6rem}
+  .plan .price{font-size:2.5rem}
 }
 </style>
 </head>
