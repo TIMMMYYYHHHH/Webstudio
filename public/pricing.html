@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monthly Plans — KZN Web Studio</title>
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Archivo',sans-serif;background:#f5f0e8;color:#0a0a0a}
+a{color:inherit;text-decoration:none}
+
+.topbar{background:#0a0a0a;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.topbar .brand{color:#fff;font-weight:800;font-size:1.1rem}
+.topbar .brand span{color:#ff5a1f}
+.topbar a.back{color:#ff5a1f;font-weight:600;font-size:.9rem}
+.topbar a.back:hover{text-decoration:underline}
+
+.hero{padding:5rem 2rem 3rem;text-align:center;max-width:700px;margin:0 auto}
+.hero .tag{font-family:'Space Mono',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:#ff5a1f;margin-bottom:1rem}
+.hero h1{font-size:3rem;font-weight:900;line-height:1.1;margin-bottom:1rem;letter-spacing:-1px}
+.hero p{font-size:1.1rem;color:#666;line-height:1.6}
+
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:800px;margin:0 auto;padding:2rem 2rem 4rem}
+.plan{background:#fff;border-radius:16px;padding:2.5rem;border:2px solid transparent;position:relative;transition:box-shadow .2s}
+.plan:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.plan.popular{border-color:#ff5a1f}
+.plan.popular::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#ff5a1f;color:#fff;font-size:.65rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.1em}
+.plan .name{font-size:1.3rem;font-weight:800;margin-bottom:.3rem}
+.plan .price{font-size:3rem;font-weight:900;letter-spacing:-2px;margin-bottom:0}
+.plan .price span{font-size:1rem;font-weight:500;color:#888;letter-spacing:0}
+.plan .term{font-family:'Space Mono',monospace;font-size:.75rem;color:#999;margin-bottom:.5rem}
+.plan .setup{background:#e8f5e8;color:#2d7a2d;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:8px;display:inline-block;margin-bottom:1.5rem}
+.plan .blurb{font-size:.95rem;color:#666;line-height:1.5;margin-bottom:1.5rem}
+.plan ul{list-style:none;margin-bottom:2rem}
+.plan li{font-size:.9rem;padding:.5rem 0;border-bottom:1px solid #f0ece4;display:flex;align-items:flex-start;gap:.5rem}
+.plan li::before{content:'✓';color:#ff5a1f;font-weight:800;flex-shrink:0}
+.plan li.not{color:#bbb}
+.plan li.not::before{content:'—';color:#ccc}
+.plan .cta{display:block;text-align:center;background:#0a0a0a;color:#f5f0e8;padding:.8rem;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s}
+.plan .cta:hover{background:#ff5a1f}
+
+.included{max-width:800px;margin:0 auto;padding:0 2rem 4rem}
+.included h2{font-size:1.8rem;font-weight:800;margin-bottom:2rem;text-align:center}
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.inc-col h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#ff5a1f;font-weight:700;margin-bottom:1rem}
+.inc-col ul{list-style:none}
+.inc-col li{font-size:.9rem;padding:.5rem 0;border-bottom:1px solid #e8e4dc;color:#555;display:flex;gap:.5rem;align-items:flex-start}
+.inc-col li::before{content:'✓';color:#2d7a2d;font-weight:800;flex-shrink:0}
+.inc-col.not li::before{content:'✕';color:#cc4444}
+.inc-col.not li{color:#999}
+
+.terms-summary{max-width:800px;margin:0 auto;padding:0 2rem 5rem}
+.terms-summary h2{font-size:1.8rem;font-weight:800;margin-bottom:2rem;text-align:center}
+.t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.t-card{background:#fff;border-radius:12px;padding:1.8rem}
+.t-card h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.t-card p{font-size:.85rem;color:#777;line-height:1.6}
+
+.cta-bar{background:#0a0a0a;padding:4rem 2rem;text-align:center;color:#f5f0e8}
+.cta-bar h2{font-size:2rem;font-weight:800;margin-bottom:.5rem}
+.cta-bar p{color:rgba(245,240,232,.55);margin-bottom:2rem;font-size:1rem}
+.cta-bar a.btn{background:#ff5a1f;color:#fff;padding:.8rem 2rem;border-radius:8px;font-weight:700;display:inline-block}
+.cta-bar a.btn:hover{background:#e04d15}
+
+.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #e8e4dc}
+
+@media(max-width:768px){
+  .plans{grid-template-columns:1fr;max-width:420px}
+  .hero h1{font-size:2rem}
+  .inc-grid,.t-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">KZ<span>N</span> · Studio</div>
+  <a href="/" class="back">← Back to site</a>
+</div>
+
+<section class="hero">
+  <div class="tag">◦ Simple monthly pricing</div>
+  <h1>No setup fee. No big invoice. Just a professional site.</h1>
+  <p>Your website, live and hosted, billed simply every month. Cancel after 12 months with no penalty.</p>
+</section>
+
+<div class="plans">
+  <div class="plan">
+    <div class="name">Starter Site Plan</div>
+    <div class="price">R500 <span>/month</span></div>
+    <div class="term">12-month minimum term</div>
+    <div class="setup">R0 setup fee</div>
+    <div class="blurb">A sharp, professional website to get your business online and taking enquiries.</div>
+    <ul>
+      <li>Up to 5 pages</li>
+      <li>Custom, mobile-responsive design</li>
+      <li>Hosting & SSL included</li>
+      <li>30 min / month content updates</li>
+      <li>Domain connection</li>
+      <li class="not">Professional email not included</li>
+    </ul>
+    <a href="/#contact" class="cta">Get started</a>
+  </div>
+
+  <div class="plan popular">
+    <div class="name">Plus Plan</div>
+    <div class="price">R750 <span>/month</span></div>
+    <div class="term">12-month minimum term</div>
+    <div class="setup">R0 setup fee</div>
+    <div class="blurb">Everything in Starter, plus more pages, more update time, and professional email on your domain.</div>
+    <ul>
+      <li>Up to 7 pages</li>
+      <li>Custom, mobile-responsive design</li>
+      <li>Hosting & SSL included</li>
+      <li>45 min / month content updates</li>
+      <li>Domain connection</li>
+      <li>Up to 5 email mailboxes (@yourdomain)</li>
+      <li>Email migration assistance (first month)</li>
+    </ul>
+    <a href="/#contact" class="cta">Get started</a>
+  </div>
+</div>
+
+<section class="included">
+  <h2>What's in every plan</h2>
+  <div class="inc-grid">
+    <div class="inc-col">
+      <h3>Included</h3>
+      <ul>
+        <li>Custom-designed, mobile-responsive website</li>
+        <li>Hosting on reliable infrastructure with SSL</li>
+        <li>Domain connection (you own the domain)</li>
+        <li>Monthly content updates within your time allowance</li>
+      </ul>
+    </div>
+    <div class="inc-col not">
+      <h3>Quoted separately</h3>
+      <ul>
+        <li>Additional pages beyond plan allowance</li>
+        <li>E-commerce / online store / payments</li>
+        <li>Logo design or full branding packages</li>
+        <li>Full redesigns or major structural changes</li>
+        <li>Content updates beyond monthly allowance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="terms-summary">
+  <h2>How it works</h2>
+  <div class="t-grid">
+    <div class="t-card">
+      <h3>Minimum term</h3>
+      <p>Both plans run for a 12-month minimum. This lets us offer zero setup fee — build time is recovered over the term instead of charged upfront.</p>
+    </div>
+    <div class="t-card">
+      <h3>Payment</h3>
+      <p>Billed monthly via EFT, due on the 1st. 7-day grace period. Site suspended (not deleted) after 14 days unpaid.</p>
+    </div>
+    <div class="t-card">
+      <h3>Early cancellation</h3>
+      <p>Months 1–3: 50% of remaining months owed. Months 4–12: flat R1,500 exit fee. Fair for both sides.</p>
+    </div>
+    <div class="t-card">
+      <h3>Ownership</h3>
+      <p>You own your content, branding and domain. Full website ownership and source files transfer to you once the 12-month term is complete.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-bar">
+  <h2>Ready to get started?</h2>
+  <p>Book a free 30-minute discovery call. No obligation, no jargon.</p>
+  <a href="/#contact" class="btn">Book a call</a>
+</div>
+
+<footer class="footer">
+  <p>© 2025 KZN Web Studio · <a href="/terms" style="color:#ff5a1f;">Full terms & conditions</a></p>
+</footer>
+</body>
+</html>

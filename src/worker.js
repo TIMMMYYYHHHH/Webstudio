@@ -20,6 +20,13 @@ export default {
       return addHeaders(await env.ASSETS.fetch(newUrl));
     }
 
+    // Clean URLs for top-level pages: /pricing -> /pricing.html, /terms -> /terms.html
+    if ((pathname === '/pricing' || pathname === '/terms') && !pathname.includes('.')) {
+      const newUrl = new URL(request.url);
+      newUrl.pathname = pathname + '.html';
+      return addHeaders(await env.ASSETS.fetch(newUrl));
+    }
+
     // For the homepage, inject a script that wires up portfolio card links
     if (pathname === '/' || pathname === '/index.html') {
       const asset = await env.ASSETS.fetch(request);
@@ -57,11 +64,18 @@ export default {
       });
     });
 
-    // Also fix "See all demos" link
+    // Fix "See all demos" link
     allLinks.forEach(function(a) {
       if (a.textContent.indexOf('See all demos') !== -1) {
-        console.log('[KZN Debug] Found See all demos link, href was:', a.getAttribute('href'));
         a.setAttribute('href', '/demos/');
+      }
+    });
+
+    // Fix "Pricing" nav link to go to /pricing page
+    allLinks.forEach(function(a) {
+      var t = a.textContent.trim();
+      if (t === 'Pricing') {
+        a.setAttribute('href', '/pricing');
       }
     });
   }
