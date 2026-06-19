@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drakensberg Stays — Demo | KZN Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f7f5f0;color:#1c3a2e}
+.banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.banner a{color:#fff;text-decoration:underline}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(28,58,46,.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
+nav .logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.4rem;color:#d4c9a8}
+nav .links{display:flex;gap:1.5rem;list-style:none}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500}
+nav .links a:hover{color:#d4c9a8}
+.cta-btn{background:#d4c9a8;color:#1c3a2e;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer}
+.cta-btn:hover{background:#c4b998}
+.hero{min-height:90vh;background:#1c3a2e;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#1c3a2e 0%,#2d5a4a 50%,#1c3a2e 100%);opacity:.9}
+.hero-content{position:relative;z-index:1;padding:2rem;max-width:700px}
+.hero-content .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:#d4c9a8;margin-bottom:1rem}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:1rem}
+.hero-content p{font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:2rem}
+.rooms{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.rooms h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:.5rem}
+.rooms .sub{text-align:center;color:#777;margin-bottom:3rem}
+.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.room-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.room-img{height:200px;background:#2d5a4a;display:flex;align-items:center;justify-content:center;color:#d4c9a8;font-weight:600;font-size:.9rem}
+.room-body{padding:1.5rem}
+.room-body h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:.5rem}
+.room-body .price{color:#1c3a2e;font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+.room-body p{font-size:.85rem;color:#888;line-height:1.5}
+.features{padding:4rem 2rem;background:#1c3a2e;color:#fff}
+.features .inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.features .f-item .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:800;color:#d4c9a8}
+.features .f-item .label{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.3rem}
+.cta-section{padding:5rem 2rem;text-align:center;background:#f7f5f0}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+.cta-section p{color:#777;margin-bottom:2rem;max-width:450px;margin-left:auto;margin-right:auto;line-height:1.6}
+.cta-section .cta-btn{background:#1c3a2e;color:#d4c9a8}
+.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #e8e4dc}
+@media(max-width:768px){
+  .hero-content h1{font-size:2.2rem}.room-grid{grid-template-columns:1fr}
+  .features .inner{grid-template-columns:repeat(2,1fr)}.rooms,.cta-section{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="banner">This is a <strong>KZN Web Studio demo</strong> — not a real lodge. <a href="/">See what we build →</a></div>
+<nav>
+  <div class="logo">Drakensberg Stays</div>
+  <ul class="links">
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#about">Experience</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+  <a href="#book" class="cta-btn">Check availability</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag">KwaZulu-Natal · South Africa</div>
+    <h1>Escape to the mountains.</h1>
+    <p>Boutique self-catering cottages nestled in the Central Drakensberg. Hike, ride, or simply breathe — then come home to a fireplace and starlit skies.</p>
+    <a href="#book" class="cta-btn">Check availability</a>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <h2>Our cottages</h2>
+  <p class="sub">Each cottage sleeps 2–6 guests with full kitchen and mountain views.</p>
+  <div class="room-grid">
+    <div class="room-card">
+      <div class="room-img">📸 Cottage exterior — stone & thatch</div>
+      <div class="room-body">
+        <h3>Bushman's Cottage</h3>
+        <div class="price">R 1 850 / night</div>
+        <p>Sleeps 4 · 2 bedrooms · Fireplace · Mountain-facing deck</p>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-img">📸 Open-plan living with views</div>
+      <div class="room-body">
+        <h3>Eagle's Nest Suite</h3>
+        <div class="price">R 2 400 / night</div>
+        <p>Sleeps 2 · King suite · Outdoor bath · Private hiking trail</p>
+      </div>
+    </div>
+    <div class="room-card">
+      <div class="room-img">📸 Family cottage garden</div>
+      <div class="room-body">
+        <h3>Valley View Lodge</h3>
+        <div class="price">R 3 200 / night</div>
+        <p>Sleeps 6 · 3 bedrooms · Braai area · Pool access</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="inner">
+    <div class="f-item"><div class="num">15+</div><div class="label">Years hosting</div></div>
+    <div class="f-item"><div class="num">4.8★</div><div class="label">TripAdvisor</div></div>
+    <div class="f-item"><div class="num">6</div><div class="label">Cottages</div></div>
+    <div class="f-item"><div class="num">50+</div><div class="label">Hiking trails nearby</div></div>
+  </div>
+</section>
+
+<section class="cta-section" id="book">
+  <h2>Book your stay</h2>
+  <p>Choose your dates and cottage. We'll confirm within 2 hours and send you directions to the mountains.</p>
+  <button class="cta-btn" onclick="alert('This is a demo — your real site would have a live booking calendar here.')">Check availability</button>
+</section>
+
+<footer class="footer">
+  <p>Demo site by <a href="/" style="color:#1c3a2e;">KZN Web Studio</a> — this is not a real lodge.</p>
+</footer>
+</body>
+</html>

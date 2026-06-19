@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coastal Law Co. — Demo | KZN Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#1a2238}
+.banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.banner a{color:#fff;text-decoration:underline}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#1a2238;position:sticky;top:0;z-index:100}
+nav .logo{font-family:'Libre Baskerville',serif;font-weight:700;font-size:1.2rem;color:#c5a55a}
+nav .links{display:flex;gap:1.5rem;list-style:none}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500}
+nav .links a:hover{color:#c5a55a}
+.cta-btn{background:#c5a55a;color:#1a2238;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer}
+.cta-btn:hover{background:#b8964e}
+.hero{min-height:80vh;background:linear-gradient(160deg,#1a2238 0%,#23304a 60%,#1a2238 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-content{max-width:650px;padding:2rem}
+.hero-content .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:#c5a55a;margin-bottom:1rem}
+.hero-content h1{font-family:'Libre Baskerville',serif;font-size:3rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:1rem}
+.hero-content p{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:2rem}
+.areas{padding:5rem 2rem;max-width:1000px;margin:0 auto}
+.areas h2{font-family:'Libre Baskerville',serif;font-size:2rem;text-align:center;margin-bottom:3rem}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.area-card{background:#fff;border:1px solid #e8eaf0;border-radius:10px;padding:2rem;text-align:center;transition:box-shadow .2s}
+.area-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.area-card .icon{font-size:2rem;margin-bottom:1rem}
+.area-card h3{font-family:'Libre Baskerville',serif;font-size:1rem;margin-bottom:.5rem}
+.area-card p{font-size:.85rem;color:#777;line-height:1.5}
+.team{padding:4rem 2rem;background:#1a2238;color:#fff;text-align:center}
+.team h2{font-family:'Libre Baskerville',serif;font-size:1.8rem;margin-bottom:.5rem}
+.team .sub{color:rgba(255,255,255,.5);margin-bottom:2.5rem}
+.team-grid{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.team-member{width:200px}
+.team-photo{width:120px;height:120px;border-radius:50%;background:#23304a;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#c5a55a;font-size:.75rem;font-weight:600}
+.team-member h4{font-size:.95rem;margin-bottom:.2rem}
+.team-member p{font-size:.8rem;color:rgba(255,255,255,.5)}
+.contact{padding:5rem 2rem;text-align:center}
+.contact h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
+.contact p{color:#777;max-width:450px;margin:0 auto 2rem;line-height:1.6}
+.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #e8eaf0}
+@media(max-width:768px){.hero-content h1{font-size:2rem}.area-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="banner">This is a <strong>KZN Web Studio demo</strong> — not a real law firm. <a href="/">See what we build →</a></div>
+<nav>
+  <div class="logo">Coastal Law Co.</div>
+  <ul class="links">
+    <li><a href="#areas">Practice Areas</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Free consultation</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag">Attorneys · Umhlanga Ridge</div>
+    <h1>Trusted counsel for coastal KZN.</h1>
+    <p>Clear advice, fixed-fee options and a track record built over two decades of practice on the North Coast.</p>
+    <a href="#contact" class="cta-btn">Book a free consultation</a>
+  </div>
+</section>
+
+<section class="areas" id="areas">
+  <h2>Practice areas</h2>
+  <div class="area-grid">
+    <div class="area-card"><div class="icon">🏠</div><h3>Property & Conveyancing</h3><p>Transfers, bond registrations and sectional title work.</p></div>
+    <div class="area-card"><div class="icon">📄</div><h3>Wills & Estates</h3><p>Drafting wills, administering deceased estates and trusts.</p></div>
+    <div class="area-card"><div class="icon">⚖️</div><h3>Commercial Law</h3><p>Contracts, company formations and shareholder agreements.</p></div>
+    <div class="area-card"><div class="icon">👨‍👩‍👧</div><h3>Family Law</h3><p>Divorce, custody, maintenance and protection orders.</p></div>
+    <div class="area-card"><div class="icon">🔨</div><h3>Litigation</h3><p>Civil and commercial disputes in the High and Magistrate's Court.</p></div>
+    <div class="area-card"><div class="icon">💼</div><h3>Labour Law</h3><p>CCMA representation, disciplinary procedures and contracts.</p></div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <h2>Our team</h2>
+  <p class="sub">Experienced attorneys who know the North Coast.</p>
+  <div class="team-grid">
+    <div class="team-member"><div class="team-photo">PHOTO</div><h4>Sarah Naidoo</h4><p>Director · Property</p></div>
+    <div class="team-member"><div class="team-photo">PHOTO</div><h4>James van Wyk</h4><p>Director · Litigation</p></div>
+    <div class="team-member"><div class="team-photo">PHOTO</div><h4>Thandi Mkhize</h4><p>Associate · Family Law</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Get in touch</h2>
+  <p>Book a free 30-minute consultation. We'll listen first, then give you straight answers about where you stand.</p>
+  <button class="cta-btn" onclick="alert('This is a demo — your real site would have a contact form and booking link here.')">Book consultation</button>
+</section>
+
+<footer class="footer">
+  <p>Demo site by <a href="/" style="color:#c5a55a;">KZN Web Studio</a> — this is not a real law firm.</p>
+</footer>
+</body>
+</html>

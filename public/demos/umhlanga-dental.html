@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umhlanga Dental — Demo | KZN Web Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fafafa;color:#1a1a1a}
+.banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.banner a{color:#fff;text-decoration:underline}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100}
+nav .logo{font-weight:800;font-size:1.3rem;color:#0a6e5c}
+nav .links{display:flex;gap:1.5rem;list-style:none}
+nav .links a{text-decoration:none;color:#555;font-size:.9rem;font-weight:500}
+nav .links a:hover{color:#0a6e5c}
+.cta-btn{background:#0a6e5c;color:#fff;padding:.6rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer}
+.cta-btn:hover{background:#085c4d}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:80vh;align-items:center}
+.hero-text{padding:4rem 3rem}
+.hero-text h1{font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1rem}
+.hero-text h1 span{color:#0a6e5c}
+.hero-text p{font-size:1.1rem;color:#666;line-height:1.6;margin-bottom:2rem;max-width:480px}
+.hero-img{background:#e8f5f1;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#0a6e5c;font-weight:600}
+.trust{display:flex;gap:2rem;align-items:center;padding:2rem 3rem;background:#f0faf7;flex-wrap:wrap}
+.trust-item{font-size:.85rem;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.trust-item strong{display:block;font-size:1.8rem;color:#0a6e5c}
+.services{padding:5rem 3rem;max-width:1100px;margin:0 auto}
+.services h2{font-size:2rem;font-weight:800;margin-bottom:.5rem}
+.services .sub{color:#888;margin-bottom:3rem}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.srv-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:2rem;transition:box-shadow .2s}
+.srv-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.srv-card .icon{width:48px;height:48px;background:#e8f5f1;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem}
+.srv-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.srv-card p{font-size:.9rem;color:#777;line-height:1.5}
+.booking{padding:5rem 3rem;background:#0a6e5c;color:#fff;text-align:center}
+.booking h2{font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+.booking p{max-width:500px;margin:0 auto 2rem;color:rgba(255,255,255,.8);line-height:1.6}
+.booking .cta-btn{background:#fff;color:#0a6e5c}
+.booking .cta-btn:hover{background:#f0f0f0}
+.footer{padding:2rem 3rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #eee}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr}.hero-img{min-height:300px}.hero-text{padding:2rem 1.5rem}.hero-text h1{font-size:2rem}
+  .srv-grid{grid-template-columns:1fr}.services,.booking{padding:3rem 1.5rem}.trust{padding:1.5rem;gap:1rem}
+}
+</style>
+</head>
+<body>
+<div class="banner">This is a <strong>KZN Web Studio demo</strong> — not a real practice. <a href="/">See what we build →</a></div>
+<nav>
+  <div class="logo">Umhlanga Dental</div>
+  <ul class="links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="cta-btn">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Your smile, <span>our passion.</span></h1>
+    <p>Modern dentistry in the heart of Umhlanga. From check-ups to cosmetic transformations — gentle care you can trust.</p>
+    <a href="#contact" class="cta-btn">Book a consultation</a>
+  </div>
+  <div class="hero-img">📸 Hero image — smiling patient in a modern clinic</div>
+</section>
+
+<div class="trust">
+  <div class="trust-item"><strong>12+</strong>Years in practice</div>
+  <div class="trust-item"><strong>4 000+</strong>Happy patients</div>
+  <div class="trust-item"><strong>4.9★</strong>Google rating</div>
+  <div class="trust-item"><strong>Same-day</strong>Emergency slots</div>
+</div>
+
+<section class="services" id="services">
+  <h2>What we do</h2>
+  <p class="sub">Comprehensive dental care for the whole family.</p>
+  <div class="srv-grid">
+    <div class="srv-card">
+      <div class="icon">🦷</div>
+      <h3>General Dentistry</h3>
+      <p>Check-ups, cleanings, fillings and extractions with a gentle touch.</p>
+    </div>
+    <div class="srv-card">
+      <div class="icon">✨</div>
+      <h3>Cosmetic</h3>
+      <p>Whitening, veneers and smile makeovers that build confidence.</p>
+    </div>
+    <div class="srv-card">
+      <div class="icon">🔧</div>
+      <h3>Restorations</h3>
+      <p>Crowns, bridges and implants that look and feel natural.</p>
+    </div>
+    <div class="srv-card">
+      <div class="icon">👶</div>
+      <h3>Kids' Dentistry</h3>
+      <p>A friendly, stress-free environment for young smiles.</p>
+    </div>
+    <div class="srv-card">
+      <div class="icon">🚨</div>
+      <h3>Emergency</h3>
+      <p>Same-day appointments for pain, breaks and urgent issues.</p>
+    </div>
+    <div class="srv-card">
+      <div class="icon">📋</div>
+      <h3>Orthodontics</h3>
+      <p>Invisible aligners and braces for teens and adults.</p>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="contact">
+  <h2>Ready to book?</h2>
+  <p>Call us, WhatsApp us, or fill in the form. We'll get back to you within the hour during business hours.</p>
+  <button class="cta-btn" onclick="alert('This is a demo — your real site would open a booking form here.')">Book appointment</button>
+</section>
+
+<footer class="footer">
+  <p>Demo site by <a href="/" style="color:#0a6e5c;">KZN Web Studio</a> — this is not a real dental practice.</p>
+</footer>
+</body>
+</html>

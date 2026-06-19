@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BuildRight Projects — Demo | KZN Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fafafa;color:#0a0a0a}
+.banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.banner a{color:#fff;text-decoration:underline}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#0a0a0a;position:sticky;top:0;z-index:100}
+nav .logo{font-weight:800;font-size:1.3rem;color:#f5c518}
+nav .links{display:flex;gap:1.5rem;list-style:none}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500}
+nav .links a:hover{color:#f5c518}
+.cta-btn{background:#f5c518;color:#0a0a0a;padding:.6rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer}
+.cta-btn:hover{background:#e0b310}
+.hero{min-height:85vh;background:#0a0a0a;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero-text{padding:4rem 3rem;color:#fff}
+.hero-text .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:#f5c518;margin-bottom:1rem}
+.hero-text h1{font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1rem}
+.hero-text h1 span{color:#f5c518}
+.hero-text p{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:2rem;max-width:460px}
+.hero-img{height:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:#f5c518;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#f5c518;padding:2rem}
+.stat{text-align:center}
+.stat strong{display:block;font-size:2rem;font-weight:800;color:#0a0a0a}
+.stat span{font-size:.8rem;color:rgba(10,10,10,.6)}
+.services{padding:5rem 2rem;max-width:1000px;margin:0 auto}
+.services h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.srv-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:2rem}
+.srv-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.srv-card p{font-size:.9rem;color:#777;line-height:1.5}
+.quote-section{padding:5rem 2rem;background:#0a0a0a;color:#fff;text-align:center}
+.quote-section h2{font-size:2rem;font-weight:800;margin-bottom:1rem}
+.quote-section p{color:rgba(255,255,255,.6);max-width:450px;margin:0 auto 2rem;line-height:1.6}
+.quote-section .cta-btn{background:#f5c518;color:#0a0a0a}
+.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #eee}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr}.hero-img{min-height:250px}.hero-text{padding:2rem 1.5rem}.hero-text h1{font-size:2rem}
+  .stats{grid-template-columns:repeat(2,1fr);gap:1rem}.srv-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="banner">This is a <strong>KZN Web Studio demo</strong> — not a real company. <a href="/">See what we build →</a></div>
+<nav>
+  <div class="logo">BuildRight</div>
+  <ul class="links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#quote">Get a quote</a></li>
+  </ul>
+  <a href="#quote" class="cta-btn">Free quote</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag">Construction · KwaZulu-Natal</div>
+    <h1>We build it <span>right.</span></h1>
+    <p>Residential and commercial construction across KZN. From foundations to finishing — quality you can stand on.</p>
+    <a href="#quote" class="cta-btn">Get a free quote</a>
+  </div>
+  <div class="hero-img">📸 Construction site — team at work</div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>200+</strong><span>Projects completed</span></div>
+  <div class="stat"><strong>18</strong><span>Years experience</span></div>
+  <div class="stat"><strong>NHBRC</strong><span>Registered</span></div>
+  <div class="stat"><strong>100%</strong><span>Completion rate</span></div>
+</div>
+
+<section class="services" id="services">
+  <h2>What we do</h2>
+  <div class="srv-grid">
+    <div class="srv-card"><h3>New Builds</h3><p>Full residential and commercial construction from plan to handover.</p></div>
+    <div class="srv-card"><h3>Renovations</h3><p>Kitchen refits, bathroom upgrades, extensions and modernisations.</p></div>
+    <div class="srv-card"><h3>Project Management</h3><p>End-to-end coordination so you don't have to chase subcontractors.</p></div>
+    <div class="srv-card"><h3>Maintenance</h3><p>Ongoing building maintenance, repairs and compliance work.</p></div>
+  </div>
+</section>
+
+<section class="quote-section" id="quote">
+  <h2>Get a free quote</h2>
+  <p>Tell us about your project. We'll visit the site and come back with a transparent, itemised quote — no obligation.</p>
+  <button class="cta-btn" onclick="alert('This is a demo — your real site would open a quote request form here.')">Request quote</button>
+</section>
+
+<footer class="footer">
+  <p>Demo site by <a href="/" style="color:#f5c518;">KZN Web Studio</a> — this is not a real construction company.</p>
+</footer>
+</body>
+</html>

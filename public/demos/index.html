@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo Portfolio — KZN Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Archivo',sans-serif;background:#f5f0e8;color:#0a0a0a;min-height:100vh}
+.topbar{background:#0a0a0a;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:#ff5a1f;text-decoration:none;font-weight:600;font-size:.9rem}
+.topbar a:hover{text-decoration:underline}
+.topbar .brand{color:#fff;font-weight:800;font-size:1.1rem}
+.topbar .brand span{color:#ff5a1f}
+.container{max-width:1000px;margin:0 auto;padding:4rem 2rem}
+h1{font-size:2.5rem;font-weight:800;margin-bottom:.5rem}
+.sub{color:#888;font-size:1.05rem;margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.card-img{height:200px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;color:#fff}
+.card-body{padding:1.5rem}
+.card-body .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#ff5a1f;font-weight:600;margin-bottom:.5rem}
+.card-body h2{font-size:1.2rem;font-weight:700;margin-bottom:.4rem}
+.card-body p{font-size:.85rem;color:#888;line-height:1.5}
+.card-body .arrow{display:inline-block;margin-top:.8rem;font-size:.85rem;color:#ff5a1f;font-weight:600}
+@media(max-width:768px){.grid{grid-template-columns:1fr}.container{padding:2rem 1.5rem}h1{font-size:1.8rem}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">KZ<span>N</span> · Studio</div>
+  <a href="/">← Back to main site</a>
+</div>
+
+<div class="container">
+  <h1>Demo portfolio</h1>
+  <p class="sub">Live demos showing what we build for small businesses across KZN.</p>
+
+  <div class="grid">
+    <a href="/demos/umhlanga-dental" class="card">
+      <div class="card-img" style="background:#0a6e5c">📸 Umhlanga Dental</div>
+      <div class="card-body">
+        <div class="tag">Demo 01 — Healthcare</div>
+        <h2>Umhlanga Dental</h2>
+        <p>Clinic homepage with booking, services and trust signals.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+
+    <a href="/demos/drakensberg-stays" class="card">
+      <div class="card-img" style="background:#1c3a2e">📸 Drakensberg Stays</div>
+      <div class="card-body">
+        <div class="tag">Demo 02 — Hospitality</div>
+        <h2>Drakensberg Stays</h2>
+        <p>Lodge & rates page with room listings and direct booking.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+
+    <a href="/demos/spice-route-eats" class="card">
+      <div class="card-img" style="background:#7a2912">📸 Spice Route Eats</div>
+      <div class="card-body">
+        <div class="tag">Demo 03 — Restaurant</div>
+        <h2>Spice Route Eats</h2>
+        <p>Online menu with categories, prices and order CTA.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+
+    <a href="/demos/buildright-projects" class="card">
+      <div class="card-img" style="background:#0a0a0a">📸 BuildRight Projects</div>
+      <div class="card-body">
+        <div class="tag">Demo 04 — Construction</div>
+        <h2>BuildRight Projects</h2>
+        <p>Services + quote form for a construction company.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+
+    <a href="/demos/coastal-law" class="card">
+      <div class="card-img" style="background:#23304a">📸 Coastal Law Co.</div>
+      <div class="card-body">
+        <div class="tag">Demo 05 — Professional</div>
+        <h2>Coastal Law Co.</h2>
+        <p>Trust-first firm profile with practice areas and team.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+
+    <a href="/demos/zinto-fitness" class="card">
+      <div class="card-img" style="background:#3a2a0a">📸 Zinto Fitness</div>
+      <div class="card-body">
+        <div class="tag">Demo 06 — Fitness</div>
+        <h2>Zinto Fitness</h2>
+        <p>Class schedule, membership pricing and sign-up flow.</p>
+        <span class="arrow">View demo →</span>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

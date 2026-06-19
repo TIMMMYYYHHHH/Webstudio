@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zinto Fitness — Demo | KZN Web Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff}
+.banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
+.banner a{color:#fff;text-decoration:underline}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(10,10,10,.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
+nav .logo{font-weight:900;font-size:1.4rem;color:#ff8c00;text-transform:uppercase;letter-spacing:.05em}
+nav .links{display:flex;gap:1.5rem;list-style:none}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.5);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+nav .links a:hover{color:#ff8c00}
+.cta-btn{background:#ff8c00;color:#0a0a0a;padding:.65rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.03em}
+.cta-btn:hover{background:#e67e00}
+.hero{min-height:90vh;background:linear-gradient(135deg,#0a0a0a 0%,#1a1200 50%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-content{max-width:700px;padding:2rem}
+.hero-content h1{font-size:4rem;font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1rem;background:linear-gradient(135deg,#ff8c00,#ffb347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-content p{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:2rem}
+.classes{padding:5rem 2rem;max-width:1000px;margin:0 auto}
+.classes h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem;text-transform:uppercase}
+.class-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.class-card{background:#141414;border:1px solid #222;border-radius:12px;padding:1.8rem;transition:border-color .2s}
+.class-card:hover{border-color:#ff8c00}
+.class-card .time{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#ff8c00;margin-bottom:.5rem}
+.class-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.class-card p{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.5}
+.pricing{padding:5rem 2rem;background:#141414}
+.pricing h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem;text-transform:uppercase}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
+.price-card{background:#0a0a0a;border:1px solid #222;border-radius:12px;padding:2rem;text-align:center}
+.price-card.pop{border-color:#ff8c00;position:relative}
+.price-card.pop::before{content:'POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#ff8c00;color:#0a0a0a;font-size:.65rem;font-weight:800;padding:3px 12px;border-radius:10px;letter-spacing:.1em}
+.price-card h3{font-size:1rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase}
+.price-card .amount{font-size:2.5rem;font-weight:900;color:#ff8c00}
+.price-card .period{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
+.price-card ul{list-style:none;margin-bottom:1.5rem;text-align:left}
+.price-card li{font-size:.85rem;color:rgba(255,255,255,.5);padding:.4rem 0;border-bottom:1px solid #1a1a1a}
+.join{padding:5rem 2rem;text-align:center}
+.join h2{font-size:2rem;font-weight:800;text-transform:uppercase;margin-bottom:1rem}
+.join p{color:rgba(255,255,255,.4);max-width:400px;margin:0 auto 2rem;line-height:1.6}
+.footer{padding:2rem;text-align:center;color:rgba(255,255,255,.3);font-size:.8rem;border-top:1px solid #1a1a1a}
+@media(max-width:768px){.hero-content h1{font-size:2.5rem}.class-grid,.price-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="banner">This is a <strong>KZN Web Studio demo</strong> — not a real gym. <a href="/">See what we build →</a></div>
+<nav>
+  <div class="logo">Zinto Fitness</div>
+  <ul class="links">
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+  <a href="#join" class="cta-btn">Join now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Train harder. Live better.</h1>
+    <p>Functional fitness classes, personal training and open gym — right in the heart of Durban North.</p>
+    <a href="#classes" class="cta-btn">View schedule</a>
+  </div>
+</section>
+
+<section class="classes" id="classes">
+  <h2>This week's classes</h2>
+  <div class="class-grid">
+    <div class="class-card"><div class="time">Mon · Wed · Fri — 06:00</div><h3>HIIT Burn</h3><p>30-min high-intensity interval. All levels.</p></div>
+    <div class="class-card"><div class="time">Tue · Thu — 07:00</div><h3>Strength Lab</h3><p>Barbell-focused strength. Progressive overload.</p></div>
+    <div class="class-card"><div class="time">Mon · Wed — 17:30</div><h3>Box Fit</h3><p>Boxing-inspired cardio. Pads, bags and core.</p></div>
+    <div class="class-card"><div class="time">Sat — 08:00</div><h3>Weekend WOD</h3><p>Team workout of the day. Bring a friend.</p></div>
+    <div class="class-card"><div class="time">Tue · Thu — 18:00</div><h3>Yoga Flow</h3><p>Recovery-focused vinyasa. Breathe and stretch.</p></div>
+    <div class="class-card"><div class="time">Daily — 05:30–20:00</div><h3>Open Gym</h3><p>Full floor access. Racks, dumbbells, cardio.</p></div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Membership</h2>
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Open Gym</h3>
+      <div class="amount">R 450</div>
+      <div class="period">per month</div>
+      <ul><li>Full gym access</li><li>05:30 – 20:00 daily</li><li>No contract</li></ul>
+      <button class="cta-btn" onclick="alert('Demo — your real site would have a sign-up flow.')">Join</button>
+    </div>
+    <div class="price-card pop">
+      <h3>Unlimited</h3>
+      <div class="amount">R 750</div>
+      <div class="period">per month</div>
+      <ul><li>All classes included</li><li>Open gym access</li><li>1 free PT session/month</li></ul>
+      <button class="cta-btn" onclick="alert('Demo — your real site would have a sign-up flow.')">Join</button>
+    </div>
+    <div class="price-card">
+      <h3>Personal Training</h3>
+      <div class="amount">R 500</div>
+      <div class="period">per session</div>
+      <ul><li>1-on-1 coaching</li><li>Custom programme</li><li>Nutrition guidance</li></ul>
+      <button class="cta-btn" onclick="alert('Demo — your real site would have a sign-up flow.')">Book</button>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <h2>Start today</h2>
+  <p>No joining fee this month. Walk in or sign up online — your first class is on us.</p>
+  <button class="cta-btn" onclick="alert('Demo — your real site would have a membership sign-up here.')">Get started</button>
+</section>
+
+<footer class="footer">
+  <p>Demo site by <a href="/" style="color:#ff8c00;">KZN Web Studio</a> — this is not a real gym.</p>
+</footer>
+</body>
+</html>
