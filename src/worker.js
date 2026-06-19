@@ -26,7 +26,7 @@ export default {
       let html = await asset.text();
 
       const linkScript = `<script>
-document.addEventListener('DOMContentLoaded', function() {
+(function(){
   var slugs = {
     'Umhlanga Dental': 'umhlanga-dental',
     'Drakensberg Stays': 'drakensberg-stays',
@@ -36,21 +36,28 @@ document.addEventListener('DOMContentLoaded', function() {
     'Zinto Fitness': 'zinto-fitness'
   };
   function wireLinks() {
-    var cards = document.querySelectorAll('a[href="#work"]');
-    cards.forEach(function(card) {
-      var name = card.querySelector('div[style*="font-weight:800"]');
-      if (name) {
-        var text = name.textContent.trim();
-        if (slugs[text]) {
-          card.href = '/demos/' + slugs[text];
-          card.target = '_blank';
+    document.querySelectorAll('a').forEach(function(a) {
+      if (a.getAttribute('href') !== '#work') return;
+      var textEls = a.querySelectorAll('div');
+      for (var i = 0; i < textEls.length; i++) {
+        var t = textEls[i].textContent.trim();
+        if (slugs[t]) {
+          a.setAttribute('href', '/demos/' + slugs[t]);
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener');
+          break;
         }
       }
     });
   }
-  wireLinks();
-  new MutationObserver(wireLinks).observe(document.body, { childList: true, subtree: true });
-});
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(wireLinks, 2000); });
+  } else {
+    setTimeout(wireLinks, 2000);
+  }
+  setTimeout(wireLinks, 4000);
+  setTimeout(wireLinks, 6000);
+})();
 </script>`;
 
       html = html.replace('</body>', linkScript + '</body>');
