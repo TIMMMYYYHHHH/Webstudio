@@ -63,8 +63,9 @@ img{max-width:100%;display:block}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .folio-card{display:block;background:#0a0a0a;overflow:hidden;transition:transform .25s}
 .folio-card:hover{transform:translateY(-6px)}
-.folio-thumb{height:230px;background:repeating-linear-gradient(135deg,rgba(245,240,232,.06) 0 13px,transparent 13px 26px);display:flex;align-items:center;justify-content:center}
-.folio-thumb span{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:1px;color:rgba(245,240,232,.4)}
+.folio-thumb{height:230px;overflow:hidden;position:relative}
+.folio-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.folio-card:hover .folio-thumb img{transform:scale(1.05)}
 .folio-info{padding:1.2rem 1.4rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-top:3px solid #ff5a1f}
 .folio-info .name{color:#f5f0e8;font-weight:800;font-size:1.15rem;letter-spacing:-.3px}
 .folio-info .cat{color:rgba(245,240,232,.5);font-size:.8rem;font-family:'Space Mono',monospace;margin-top:5px}
@@ -213,42 +214,42 @@ img{max-width:100%;display:block}
     </div>
     <div class="portfolio-grid">
       <a href="/demos/umhlanga-dental" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 01 - clinic homepage ]</span></div>
+        <div class="folio-thumb"><img src="/img/umhlanga-dental.jpg" alt="Umhlanga Dental demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Umhlanga Dental</div><div class="cat">Healthcare · Booking site</div></div>
           <span class="arrow">↗</span>
         </div>
       </a>
       <a href="/demos/drakensberg-stays" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 02 - lodge & rates ]</span></div>
+        <div class="folio-thumb"><img src="/img/drakensberg-stays.jpg" alt="Drakensberg Stays demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Drakensberg Stays</div><div class="cat">Hospitality · Direct bookings</div></div>
           <span class="arrow">↗</span>
         </div>
       </a>
       <a href="/demos/spice-route-eats" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 03 - menu & order ]</span></div>
+        <div class="folio-thumb"><img src="/img/spice-route-eats.jpg" alt="Spice Route Eats demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Spice Route Eats</div><div class="cat">Restaurant · Online menu</div></div>
           <span class="arrow">↗</span>
         </div>
       </a>
       <a href="/demos/buildright-projects" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 04 - services + quote ]</span></div>
+        <div class="folio-thumb"><img src="/img/buildright-projects.jpg" alt="BuildRight Projects demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">BuildRight Projects</div><div class="cat">Construction · Lead gen</div></div>
           <span class="arrow">↗</span>
         </div>
       </a>
       <a href="/demos/coastal-law" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 05 - firm profile ]</span></div>
+        <div class="folio-thumb"><img src="/img/coastal-law.jpg" alt="Coastal Law Co. demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Coastal Law Co.</div><div class="cat">Professional · Trust-first</div></div>
           <span class="arrow">↗</span>
         </div>
       </a>
       <a href="/demos/zinto-fitness" class="folio-card">
-        <div class="folio-thumb"><span>[ DEMO 06 - schedule + join ]</span></div>
+        <div class="folio-thumb"><img src="/img/zinto-fitness.jpg" alt="Zinto Fitness demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Zinto Fitness</div><div class="cat">Fitness · Class signups</div></div>
           <span class="arrow">↗</span>
@@ -324,7 +325,6 @@ img{max-width:100%;display:block}
           <li>45 min/month content updates</li>
           <li>Domain connection</li>
           <li>Up to 5 email mailboxes (@yourdomain)</li>
-          <li>Email migration assistance</li>
         </ul>
         <a href="#contact" class="card-cta">Get started</a>
       </div>
