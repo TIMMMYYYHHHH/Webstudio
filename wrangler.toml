@@ -3,4 +3,13 @@ name = 'webstudio'
 main = "src/worker.js"
 compatibility_date = "2024-01-01"
 
+{
+  "observability": {
+    "logs": {
+      "enabled": false,
+      "invocation_logs": true
+    }
+  }
+}
+
 assets = { directory = "./public", binding = "ASSETS", serve_directly = false }
