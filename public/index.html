@@ -394,15 +394,35 @@ img{max-width:100%;display:block}
     <div class="section-tag">◦ Get in touch</div>
     <h2 class="section-title" style="color:#f5f0e8">Let's build<br>something great.</h2>
     <p class="section-sub" style="color:rgba(245,240,232,.45)">Book a free discovery call or drop us a message. No obligation, no jargon - just a conversation about your business.</p>
-    <form class="contact-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'text-align:center;color:#ff5a1f;font-weight:700;font-size:1.1rem;padding:2rem 0\'>Thanks! We\'ll be in touch within 24 hours.</p>';">
+    <form class="contact-form" id="contactForm">
       <div class="row">
         <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
         <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
       </div>
       <input type="text" name="business" placeholder="Business name" aria-label="Business name">
-      <textarea name="message" placeholder="Tell us about your project..." aria-label="Message"></textarea>
-      <button type="submit" class="btn-primary">Send message</button>
+      <textarea name="message" placeholder="Tell us about your project..." required aria-label="Message"></textarea>
+      <button type="submit" class="btn-primary" id="contactBtn">Send message</button>
     </form>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit',async function(e){
+      e.preventDefault();
+      const btn=document.getElementById('contactBtn');
+      btn.disabled=true;btn.textContent='Sending...';
+      try{
+        const res=await fetch('/api/contact',{method:'POST',body:new FormData(this)});
+        const data=await res.json();
+        if(data.success){
+          this.innerHTML='<p style="text-align:center;color:#ff5a1f;font-weight:700;font-size:1.1rem;padding:2rem 0">'+data.message+'</p>';
+        }else{
+          btn.disabled=false;btn.textContent='Send message';
+          alert(data.message||'Something went wrong. Please try again.');
+        }
+      }catch{
+        btn.disabled=false;btn.textContent='Send message';
+        alert('Network error. Please try again.');
+      }
+    });
+    </script>
   </div>
 </section>
 
