@@ -17,128 +17,137 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:#0a0a0a;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:#f5f0e8;color:#1a1a1a;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);padding:0 2rem}
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,240,232,.92);backdrop-filter:blur(16px);padding:0 2rem;border-bottom:1px solid rgba(10,10,10,.06)}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav .brand{display:flex;align-items:center;gap:6px;font-weight:700;font-size:1.2rem;color:#f5f0e8;letter-spacing:-.3px}
+.nav .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2rem;color:#1a1a1a;letter-spacing:-.3px}
 .nav .brand .accent{color:#ff5a1f}
-.nav .brand .dot{color:rgba(245,240,232,.35);margin:0 2px}
+.nav .brand .dot{color:rgba(26,26,26,.25);margin:0 2px}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.nav-links a{color:rgba(245,240,232,.6);font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a{color:rgba(26,26,26,.55);font-size:.85rem;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:#ff5a1f}
-.nav-cta{background:#ff5a1f;color:#fff !important;padding:.5rem 1.2rem;border-radius:6px;font-weight:700;font-size:.85rem;transition:background .2s}
-.nav-cta:hover{background:#e04d15}
-.hamburger{display:none;background:none;border:none;color:#f5f0e8;font-size:1.5rem;cursor:pointer;padding:4px}
+.nav-cta{background:#1a1a1a;color:#f5f0e8 !important;padding:.5rem 1.2rem;border-radius:6px;font-weight:700;font-size:.85rem;transition:background .2s}
+.nav-cta:hover{background:#ff5a1f}
+.hamburger{display:none;background:none;border:none;color:#1a1a1a;font-size:1.5rem;cursor:pointer;padding:4px}
 
 /* HERO */
-.hero{background:#0a0a0a;padding:7rem 2rem 6rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 60% 40%,rgba(255,90,31,.06) 0%,transparent 55%);pointer-events:none}
-.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
-.hero .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(245,240,232,.4);margin-bottom:2rem}
-.hero h1{font-family:'Instrument Serif',serif;font-size:5rem;font-weight:400;color:#f5f0e8;line-height:1.05;margin-bottom:1.5rem}
+.hero{padding:5rem 2rem 4rem}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-content{max-width:560px}
+.hero h1{font-family:'Outfit',sans-serif;font-size:3.8rem;font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:1.2rem;color:#1a1a1a}
 .hero h1 .rotate-word{color:#ff5a1f;display:inline-block;min-width:3ch;transition:opacity .4s,transform .4s}
-.hero h1 .rotate-word.out{opacity:0;transform:translateY(12px)}
-.hero p{font-size:1.1rem;color:rgba(245,240,232,.45);line-height:1.8;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:#ff5a1f;color:#fff;padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
-.btn-primary:hover{background:#e04d15}
-.btn-ghost{border:1.5px solid rgba(245,240,232,.15);color:rgba(245,240,232,.5);padding:.75rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s}
+.hero h1 .rotate-word.out{opacity:0;transform:translateY(10px)}
+.hero p{font-size:1.05rem;color:rgba(26,26,26,.55);line-height:1.7;margin-bottom:2rem;max-width:440px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:#1a1a1a;color:#f5f0e8;padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{background:#ff5a1f}
+.btn-ghost{border:1.5px solid rgba(26,26,26,.15);color:rgba(26,26,26,.6);padding:.75rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s}
 .btn-ghost:hover{border-color:#ff5a1f;color:#ff5a1f}
+.hero-visual{position:relative}
+.hero-visual img{border-radius:12px;box-shadow:0 24px 80px rgba(10,10,10,.12)}
+.hero-visual .badge{position:absolute;bottom:-16px;right:-16px;background:#fff;border-radius:12px;padding:1rem 1.4rem;box-shadow:0 8px 32px rgba(10,10,10,.08);font-size:.8rem;font-weight:600}
+.hero-visual .badge span{color:#ff5a1f;font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:800;display:block;letter-spacing:-1px}
 
 /* SECTION SHARED */
 .section{padding:6rem 2rem}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#ff5a1f;margin-bottom:.75rem}
-.section-title{font-family:'Instrument Serif',serif;font-size:3rem;font-weight:400;line-height:1.1;margin-bottom:1rem}
-.section-sub{font-size:1rem;color:#888;line-height:1.7;max-width:480px}
+.section-title{font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:rgba(26,26,26,.5);line-height:1.7;max-width:480px}
 
 /* PORTFOLIO */
+.portfolio-section{background:rgba(26,26,26,.03);border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)}
 .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
-.portfolio-link{font-weight:700;font-size:.85rem;border-bottom:2px solid #ff5a1f;padding-bottom:3px;transition:color .2s}
-.portfolio-link:hover{color:#ff5a1f}
+.portfolio-link{font-weight:700;font-size:.85rem;color:#ff5a1f;transition:opacity .2s}
+.portfolio-link:hover{opacity:.7}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.folio-card{display:block;background:#0a0a0a;overflow:hidden;transition:transform .25s}
-.folio-card:hover{transform:translateY(-4px)}
+.folio-card{display:block;background:#fff;border-radius:12px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.folio-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(10,10,10,.08)}
 .folio-thumb{height:230px;overflow:hidden;position:relative}
 .folio-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s}
-.folio-card:hover .folio-thumb img{transform:scale(1.04)}
-.folio-info{padding:1.2rem 1.4rem 1.4rem;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-top:2px solid #ff5a1f}
-.folio-info .name{color:#f5f0e8;font-weight:700;font-size:1.05rem}
-.folio-info .cat{color:rgba(245,240,232,.4);font-size:.75rem;font-family:'IBM Plex Mono',monospace;margin-top:4px}
-.folio-info .arrow{color:#ff5a1f;font-size:1.1rem;font-weight:700;flex-shrink:0}
+.folio-card:hover .folio-thumb img{transform:scale(1.03)}
+.folio-info{padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.folio-info .name{font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem}
+.folio-info .cat{color:rgba(26,26,26,.4);font-size:.75rem;font-family:'IBM Plex Mono',monospace;margin-top:2px}
+.folio-info .arrow{color:#ff5a1f;font-size:1rem;font-weight:700;flex-shrink:0}
 
 /* SERVICES */
-.services-bg{background:#0a0a0a;color:#f5f0e8}
-.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:3rem;background:rgba(245,240,232,.06)}
-.srv-card{background:#0a0a0a;padding:2.5rem}
-.srv-card h3{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:.6rem}
-.srv-card p{font-size:.9rem;color:rgba(245,240,232,.45);line-height:1.7}
+.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3rem}
+.srv-card{background:#fff;border-radius:12px;padding:2.2rem;transition:box-shadow .2s}
+.srv-card:hover{box-shadow:0 8px 32px rgba(10,10,10,.06)}
+.srv-card h3{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+.srv-card p{font-size:.9rem;color:rgba(26,26,26,.5);line-height:1.7}
 
 /* PRICING */
+.pricing-section{background:rgba(26,26,26,.03);border-top:1px solid rgba(26,26,26,.06);border-bottom:1px solid rgba(26,26,26,.06)}
 .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem;max-width:820px}
-.price-card{background:#fff;border-radius:16px;padding:2.5rem;border:2px solid transparent;position:relative;transition:box-shadow .2s}
-.price-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.price-card{background:#fff;border-radius:12px;padding:2.5rem;border:2px solid transparent;position:relative;transition:box-shadow .2s}
+.price-card:hover{box-shadow:0 12px 40px rgba(10,10,10,.06)}
 .price-card.pop{border-color:#ff5a1f}
-.price-card.pop::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#ff5a1f;color:#fff;font-size:.6rem;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:.1em}
-.price-card .plan-name{font-size:1.1rem;font-weight:700;margin-bottom:.3rem}
-.price-card .amount{font-family:'Instrument Serif',serif;font-size:3.2rem;font-weight:400;letter-spacing:-1px}
-.price-card .amount small{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;color:#888;letter-spacing:0}
-.price-card .term{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#999;margin-bottom:.4rem}
+.price-card.pop::before{content:'POPULAR';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#ff5a1f;color:#fff;font-size:.65rem;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:.08em}
+.price-card .plan-name{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.3rem}
+.price-card .amount{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;letter-spacing:-1px}
+.price-card .amount small{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;color:rgba(26,26,26,.4);letter-spacing:0}
+.price-card .term{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:rgba(26,26,26,.35);margin-bottom:.4rem}
 .price-card .setup{background:#e8f5e8;color:#2d7a2d;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:1.2rem}
-.price-card .blurb{font-size:.88rem;color:#666;line-height:1.6;margin-bottom:1.2rem}
+.price-card .blurb{font-size:.88rem;color:rgba(26,26,26,.5);line-height:1.6;margin-bottom:1.2rem}
 .price-card ul{list-style:none;margin-bottom:1.5rem}
-.price-card li{font-size:.85rem;padding:.45rem 0;border-bottom:1px solid #f0ece4;display:flex;align-items:center;gap:.4rem}
+.price-card li{font-size:.85rem;padding:.45rem 0;border-bottom:1px solid rgba(26,26,26,.06);display:flex;align-items:center;gap:.4rem;color:rgba(26,26,26,.7)}
 .price-card li::before{content:'✓';color:#ff5a1f;font-weight:700;font-size:.8rem}
-.price-card li.not{color:#bbb}
-.price-card li.not::before{content:'-';color:#ccc}
-.price-card .card-cta{display:block;text-align:center;background:#0a0a0a;color:#f5f0e8;padding:.75rem;border-radius:8px;font-weight:700;font-size:.9rem;transition:background .2s}
+.price-card li.not{color:rgba(26,26,26,.3)}
+.price-card li.not::before{content:'-';color:rgba(26,26,26,.2)}
+.price-card .card-cta{display:block;text-align:center;background:#1a1a1a;color:#f5f0e8;padding:.75rem;border-radius:8px;font-weight:700;font-size:.9rem;transition:background .2s}
 .price-card .card-cta:hover{background:#ff5a1f}
-.pricing-note{margin-top:2rem;font-size:.85rem;color:#999;line-height:1.6}
+.pricing-note{margin-top:2rem;font-size:.85rem;color:rgba(26,26,26,.4);line-height:1.6}
 .pricing-note a{color:#ff5a1f;font-weight:600}
 
 /* PROCESS */
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
-.proc-card{position:relative;padding-top:1.2rem;border-top:2px solid #e8e4dc}
-.proc-card.active{border-top-color:#ff5a1f}
-.proc-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.proc-card p{font-size:.85rem;color:#888;line-height:1.6}
+.proc-card{padding-top:1.2rem;border-top:2px solid rgba(26,26,26,.08)}
+.proc-card:first-child{border-top-color:#ff5a1f}
+.proc-card h3{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.proc-card p{font-size:.85rem;color:rgba(26,26,26,.45);line-height:1.6}
 
 /* TESTIMONIALS */
-.testimonials-bg{background:#0a0a0a;color:#f5f0e8}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.test-card{border:1px solid rgba(245,240,232,.08);border-radius:12px;padding:2rem}
-.test-card .quote{font-family:'Instrument Serif',serif;font-size:1.1rem;color:rgba(245,240,232,.75);line-height:1.6;margin-bottom:1.5rem}
+.test-card{background:#fff;border-radius:12px;padding:2rem}
+.test-card .quote{font-size:.95rem;color:rgba(26,26,26,.65);line-height:1.7;margin-bottom:1.5rem}
 .test-card .author{font-weight:700;font-size:.85rem}
-.test-card .role{font-size:.7rem;color:rgba(245,240,232,.35);font-family:'IBM Plex Mono',monospace;margin-top:3px;text-transform:uppercase;letter-spacing:.05em}
+.test-card .role{font-size:.7rem;color:rgba(26,26,26,.35);font-family:'IBM Plex Mono',monospace;margin-top:3px;text-transform:uppercase;letter-spacing:.05em}
 
 /* CONTACT */
-.contact{background:#0a0a0a;color:#f5f0e8;text-align:center}
-.contact .section-sub{margin:0 auto 2.5rem;text-align:center}
-.contact-form{max-width:500px;margin:0 auto;display:grid;gap:1rem}
-.contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(245,240,232,.1);border-radius:8px;background:rgba(245,240,232,.04);color:#f5f0e8;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s}
+.contact-section{background:rgba(26,26,26,.03);border-top:1px solid rgba(26,26,26,.06)}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-copy{padding-top:.5rem}
+.contact-copy h2{font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:1rem}
+.contact-copy p{font-size:1rem;color:rgba(26,26,26,.5);line-height:1.7;margin-bottom:1.5rem;max-width:400px}
+.contact-detail{font-size:.85rem;color:rgba(26,26,26,.4)}
+.contact-form{display:grid;gap:1rem}
+.contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(26,26,26,.1);border-radius:8px;background:#fff;color:#1a1a1a;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#ff5a1f}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(26,26,26,.35)}
 .contact-form textarea{resize:vertical;min-height:120px}
 .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .contact-form button{width:100%}
 
 /* FOOTER */
-.footer{background:#0a0a0a;border-top:1px solid rgba(245,240,232,.06);padding:2rem}
+.footer{border-top:1px solid rgba(26,26,26,.06);padding:2rem}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-inner .copy{font-size:.8rem;color:rgba(245,240,232,.3)}
+.footer-inner .copy{font-size:.8rem;color:rgba(26,26,26,.3)}
 .footer-links{display:flex;gap:1.5rem}
-.footer-links a{font-size:.8rem;color:rgba(245,240,232,.4);transition:color .2s}
+.footer-links a{font-size:.8rem;color:rgba(26,26,26,.35);transition:color .2s}
 .footer-links a:hover{color:#ff5a1f}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
@@ -148,25 +157,29 @@ img{max-width:100%;display:block}
 /* MOBILE */
 @media(max-width:768px){
   .hamburger{display:block}
-  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#0a0a0a;flex-direction:column;padding:1.5rem 2rem;gap:.8rem;border-top:1px solid rgba(245,240,232,.06)}
+  .nav{background:rgba(245,240,232,.97)}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(245,240,232,.97);backdrop-filter:blur(16px);flex-direction:column;padding:1.5rem 2rem;gap:.8rem;border-bottom:1px solid rgba(26,26,26,.06)}
   .nav.open .nav-links{display:flex}
   .nav-links .nav-cta{text-align:center;padding:.7rem}
-  .hero{padding:4rem 1.5rem 3.5rem}
-  .hero h1{font-size:2.8rem}
+  .hero{padding:3rem 1.5rem 2.5rem}
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .hero h1{font-size:2.6rem;letter-spacing:-1px}
   .hero p{font-size:1rem}
+  .hero-visual .badge{bottom:-10px;right:10px}
   .portfolio-grid{grid-template-columns:1fr}
   .folio-thumb{height:200px}
   .srv-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr;max-width:420px}
   .process-grid{grid-template-columns:1fr 1fr}
   .test-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:2rem}
   .contact-form .row{grid-template-columns:1fr}
   .section{padding:4rem 1.5rem}
   .section-title{font-size:2.2rem}
   .footer-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){
-  .hero h1{font-size:2.2rem}
+  .hero h1{font-size:2rem}
   .hero-btns{flex-direction:column;align-items:stretch}
   .hero-btns a{text-align:center}
   .process-grid{grid-template-columns:1fr}
@@ -187,26 +200,31 @@ img{max-width:100%;display:block}
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">How it works</a></li>
-      <li><a href="#contact" class="nav-cta">Let's talk</a></li>
+      <li><a href="#contact" class="nav-cta">Start your project</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO (left-aligned, no eyebrow) -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="tag">Web design studio · KwaZulu-Natal</div>
-    <h1>Websites that <span class="rotate-word" id="rotateWord">sell</span> for small business.</h1>
-    <p>We build sites that bring in customers, not just look good in a portfolio. No setup fee, no big invoice - just a professional site from R500/month.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Start your project</a>
-      <a href="#work" class="btn-ghost">See our work</a>
+    <div class="hero-content">
+      <h1>Websites that <span class="rotate-word" id="rotateWord">sell</span> for small business.</h1>
+      <p>We build sites that bring in customers. No setup fee, no big invoice, just a professional site from R500/month.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Start your project</a>
+        <a href="#work" class="btn-ghost">See our work</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="/img/umhlanga-dental.jpg" alt="Example website built by KZN Web Studio" width="560" height="373">
+      <div class="badge">From <span>R500</span> /month</div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="section" id="work">
+<!-- PORTFOLIO (eyebrow 1 of 3) -->
+<section class="section portfolio-section" id="work">
   <div class="section-inner reveal">
     <div class="portfolio-header">
       <div>
@@ -262,34 +280,34 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section services-bg" id="services">
+<!-- SERVICES (no eyebrow) -->
+<section class="section" id="services">
   <div class="section-inner reveal">
-    <div class="section-tag">What we do</div>
-    <h2 class="section-title" style="color:#f5f0e8">Design it. Build it.<br>Keep it running.</h2>
+    <h2 class="section-title">Design it. Build it.<br>Keep it running.</h2>
+    <p class="section-sub">We handle everything from first sketch to ongoing updates, so you can focus on running your business.</p>
     <div class="srv-grid">
       <div class="srv-card">
         <h3>Design</h3>
-        <p>Every site starts with your business, not a template. We design around what makes you different, then make it look like you've been at this for years.</p>
+        <p>Every site starts with your business, not a template. We design around what makes you different.</p>
       </div>
       <div class="srv-card">
         <h3>Build</h3>
-        <p>Fast, secure, mobile-first. Built on modern infrastructure so your site loads before your competitor's even starts.</p>
+        <p>Fast, secure, mobile-first. Built on modern infrastructure so your site loads before your competitor's.</p>
       </div>
       <div class="srv-card">
         <h3>Rank</h3>
-        <p>SEO baked in from day one. Your customers are searching on Google - we make sure they find you first.</p>
+        <p>SEO baked in from day one. Your customers are searching on Google - we make sure they find you.</p>
       </div>
       <div class="srv-card">
         <h3>Maintain</h3>
-        <p>Prices change, hours change, you launch a new service. We handle the updates so your site stays current.</p>
+        <p>Prices change, hours change, you launch a new service. We handle the updates monthly.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section" id="pricing">
+<!-- PRICING (eyebrow 2 of 3) -->
+<section class="section pricing-section" id="pricing">
   <div class="section-inner reveal">
     <div class="section-tag">Pricing</div>
     <h2 class="section-title">No setup fee.<br>No big invoice.</h2>
@@ -309,7 +327,7 @@ img{max-width:100%;display:block}
           <li>Domain connection</li>
           <li class="not">Professional email not included</li>
         </ul>
-        <a href="#contact" class="card-cta">Get started</a>
+        <a href="#contact" class="card-cta">Start your project</a>
       </div>
       <div class="price-card pop">
         <div class="plan-name">Plus</div>
@@ -325,20 +343,20 @@ img{max-width:100%;display:block}
           <li>Domain connection</li>
           <li>Up to 5 email mailboxes (@yourdomain)</li>
         </ul>
-        <a href="#contact" class="card-cta">Get started</a>
+        <a href="#contact" class="card-cta">Start your project</a>
       </div>
     </div>
     <p class="pricing-note">Need something beyond these plans? We'll <a href="#contact">quote it separately</a>. <a href="/terms">Full terms & conditions</a></p>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- PROCESS (eyebrow 3 of 3) -->
 <section class="section" id="about">
   <div class="section-inner reveal">
     <div class="section-tag">How it works</div>
     <h2 class="section-title">Call to launch<br>in four steps.</h2>
     <div class="process-grid">
-      <div class="proc-card active">
+      <div class="proc-card">
         <h3>Discovery call</h3>
         <p>A free 30-minute chat about your business, what you need, and what it costs.</p>
       </div>
@@ -347,7 +365,7 @@ img{max-width:100%;display:block}
         <p>We design your homepage first. You see the direction before we build the rest.</p>
       </div>
       <div class="proc-card">
-        <h3>Build & review</h3>
+        <h3>Build and review</h3>
         <p>Your site goes up on a live preview link. You review, we revise, until it's right.</p>
       </div>
       <div class="proc-card">
@@ -358,11 +376,10 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section testimonials-bg">
+<!-- TESTIMONIALS (no eyebrow) -->
+<section class="section">
   <div class="section-inner reveal">
-    <div class="section-tag">Testimonials</div>
-    <h2 class="section-title" style="color:#f5f0e8">What our clients say.</h2>
+    <h2 class="section-title">What our clients say.</h2>
     <div class="test-grid">
       <div class="test-card">
         <div class="quote">They made our little practice look like a national brand. Bookings doubled in three months.</div>
@@ -383,12 +400,14 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section contact" id="contact">
-  <div class="section-inner reveal">
-    <div class="section-tag">Get in touch</div>
-    <h2 class="section-title" style="color:#f5f0e8">Ready to start?</h2>
-    <p class="section-sub" style="color:rgba(245,240,232,.4)">Book a free discovery call or send a message. No obligation, no jargon.</p>
+<!-- CONTACT (no eyebrow, split layout) -->
+<section class="section contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-copy">
+      <h2>Ready to start?</h2>
+      <p>Book a free discovery call or send a message. No obligation, no jargon.</p>
+      <div class="contact-detail">Based in KwaZulu-Natal, working with businesses across South Africa.</div>
+    </div>
     <form class="contact-form" id="contactForm">
       <input type="text" name="website" style="position:absolute;left:-9999px;opacity:0;height:0" tabindex="-1" autocomplete="off">
       <div class="row">
@@ -440,20 +459,19 @@ img{max-width:100%;display:block}
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <style>
-.wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:#25d366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:300;transition:transform .2s}
+.wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:#25d366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.15);z-index:300;transition:transform .2s}
 .wa-btn:hover{transform:scale(1.1)}
 </style>
 
 <script>
-// Rotating hero word
 (function(){
-  const words=['sell','book','grow','convert','rank','launch'];
-  const el=document.getElementById('rotateWord');
+  var words=['sell','book','grow','convert','rank','launch'];
+  var el=document.getElementById('rotateWord');
   if(!el||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  let i=0;
-  setInterval(()=>{
+  var i=0;
+  setInterval(function(){
     el.classList.add('out');
-    setTimeout(()=>{
+    setTimeout(function(){
       i=(i+1)%words.length;
       el.textContent=words[i];
       el.classList.remove('out');
@@ -461,23 +479,20 @@ img{max-width:100%;display:block}
   },2500);
 })();
 
-// Scroll reveal
 (function(){
   if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){
-    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')});
     return;
   }
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
   },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
 })();
 
-// WhatsApp button delay
-setTimeout(()=>{const w=document.getElementById('waBtn');if(w)w.style.display='flex'},2000);
+setTimeout(function(){var w=document.getElementById('waBtn');if(w)w.style.display='flex'},2000);
 </script>
 
-<!-- STRUCTURED DATA -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
