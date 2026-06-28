@@ -38,7 +38,7 @@ img{max-width:100%;display:block}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
 .nav-links a{color:rgba(26,26,26,.55);font-size:.85rem;font-weight:500;transition:color 200ms var(--ease-out)}
 .nav-links a.active{color:#1a1a1a;font-weight:600}
-.nav-cta{background:#1a1a1a;color:#f5f0e8 !important;padding:.5rem 1.2rem;border-radius:6px;font-weight:700;font-size:.85rem;transition:background 200ms var(--ease-out),transform 160ms var(--ease-out)}
+.nav-cta{background:#1a1a1a;color:#f5f0e8 !important;padding:.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:.85rem;transition:background 200ms var(--ease-out),transform 160ms var(--ease-out)}
 .nav-cta:active{transform:scale(0.97)}
 .hamburger{display:none;background:none;border:none;color:#1a1a1a;font-size:1.5rem;cursor:pointer;padding:4px}
 
@@ -134,7 +134,7 @@ img{max-width:100%;display:block}
 .proc-card{padding-top:1.2rem;border-top:2px solid rgba(26,26,26,.08);counter-increment:step}
 .proc-card:first-child{border-top-color:#ff5a1f}
 .proc-card h3{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.proc-card h3::before{content:counter(step,decimal-leading-zero) " ";font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;color:rgba(26,26,26,.25);letter-spacing:.05em;display:block;margin-bottom:.3rem}
+.proc-card h3::before{content:counter(step) ". ";font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;color:rgba(26,26,26,.25);letter-spacing:.05em;display:block;margin-bottom:.3rem}
 .proc-card p{font-size:.85rem;color:rgba(26,26,26,.45);line-height:1.6}
 
 /* TESTIMONIALS */
@@ -154,6 +154,7 @@ img{max-width:100%;display:block}
 .contact-detail{font-size:.85rem;color:rgba(26,26,26,.4)}
 .contact-form{display:grid;gap:1rem;transition:opacity 400ms var(--ease-out),transform 400ms var(--ease-out)}
 .contact-form.sent{opacity:0;transform:scale(0.98)}
+.contact-form label{font-size:.8rem;font-weight:600;color:rgba(26,26,26,.5);display:block;margin-bottom:.3rem}
 .contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(26,26,26,.1);border-radius:8px;background:#fff;color:#1a1a1a;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color 200ms var(--ease-out),box-shadow 200ms var(--ease-out)}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#ff5a1f;box-shadow:0 0 0 3px rgba(255,90,31,.08)}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(26,26,26,.35)}
@@ -443,11 +444,11 @@ img{max-width:100%;display:block}
     <form class="contact-form" id="contactForm">
       <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
       <div class="row">
-        <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
-        <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+        <div><label for="cf-name">Name</label><input type="text" name="name" id="cf-name" placeholder="Your name" required></div>
+        <div><label for="cf-email">Email</label><input type="email" name="email" id="cf-email" placeholder="you@example.com" required></div>
       </div>
-      <input type="text" name="business" placeholder="Business name" aria-label="Business name">
-      <textarea name="message" placeholder="Tell us about your project..." required aria-label="Message"></textarea>
+      <div><label for="cf-biz">Business name</label><input type="text" name="business" id="cf-biz" placeholder="Optional"></div>
+      <div><label for="cf-msg">Message</label><textarea name="message" id="cf-msg" placeholder="Tell us about your project..." required></textarea></div>
       <button type="submit" class="btn-primary" id="contactBtn">Send message</button>
     </form>
     <script>
