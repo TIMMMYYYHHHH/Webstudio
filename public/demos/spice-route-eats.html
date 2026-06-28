@@ -9,44 +9,66 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
+:root{
+  --brick:#7A2912;
+  --masala:#A83520;
+  --turmeric:#F5D5A0;
+  --paper:#FAF6F1;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:#faf6f1;color:#2a1a0a}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:#2a1a0a}
+a{color:inherit}
 .banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
 .banner a{color:#fff;text-decoration:underline}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#7a2912;position:sticky;top:0;z-index:100}
-nav .logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.4rem;color:#f5d5a0}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--brick);position:sticky;top:0;z-index:100}
+nav .logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.4rem;color:var(--turmeric)}
 nav .links{display:flex;gap:1.5rem;list-style:none}
-nav .links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500}
-nav .links a:hover{color:#f5d5a0}
-.cta-btn{background:#f5d5a0;color:#7a2912;padding:.6rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500;transition:color .2s}
+nav .links a:hover{color:var(--turmeric)}
+.cta-btn{background:var(--turmeric);color:var(--brick);padding:.6rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer;display:inline-block;transition:background .2s}
 .cta-btn:hover{background:#ecc88a}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#f5d5a0}
-.hero{min-height:85vh;background:linear-gradient(135deg,#7a2912,#a83520,#7a2912);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero-content{padding:2rem;max-width:650px}
-.hero-content .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:#f5d5a0;margin-bottom:1rem}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--turmeric)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--turmeric);outline-offset:3px}
+
+/* HERO with rising steam/spice-swirl lines instead of flat gradient */
+.hero{min-height:80vh;background:var(--brick);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero .swirls{position:absolute;inset:0;width:100%;height:100%;opacity:.4}
+.hero-content{position:relative;z-index:1;padding:2rem;max-width:650px}
+.hero-content .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:var(--turmeric);margin-bottom:1rem}
 .hero-content h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:1rem}
 .hero-content p{font-size:1.1rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:2rem}
-.menu{padding:5rem 2rem;max-width:900px;margin:0 auto}
+
+/* SAMOSA-FOLD divider mark */
+.fold-divider{display:flex;justify-content:center;padding:2.5rem 0 0}
+.fold-divider svg{width:28px;height:28px}
+
+.menu{padding:3.5rem 2rem 5rem;max-width:900px;margin:0 auto}
 .menu h2{font-family:'Playfair Display',serif;font-size:2.2rem;text-align:center;margin-bottom:.5rem}
 .menu .sub{text-align:center;color:#999;margin-bottom:3rem}
 .menu-cat{margin-bottom:2.5rem}
-.menu-cat h3{font-size:1rem;text-transform:uppercase;letter-spacing:.1em;color:#7a2912;border-bottom:2px solid #7a2912;display:inline-block;padding-bottom:4px;margin-bottom:1rem}
+.menu-cat h3{display:flex;align-items:center;gap:.5rem;font-size:1rem;text-transform:uppercase;letter-spacing:.1em;color:var(--brick);margin-bottom:1.1rem}
+.menu-cat h3 svg{width:14px;height:14px;flex-shrink:0}
 .menu-item{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px dashed #ddd}
 .menu-item .name{font-weight:600}
 .menu-item .desc{font-size:.8rem;color:#999}
-.menu-item .price{font-weight:700;color:#7a2912;white-space:nowrap}
-.order{padding:5rem 2rem;background:#7a2912;color:#fff;text-align:center}
+.menu-item .price{font-weight:700;color:var(--brick);white-space:nowrap}
+
+.order{padding:5rem 2rem;background:var(--brick);color:#fff;text-align:center}
 .order h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
 .order p{color:rgba(255,255,255,.7);max-width:450px;margin:0 auto 2rem;line-height:1.6}
-.order .cta-btn{background:#fff;color:#7a2912}
+.order .cta-btn{background:#fff;color:var(--brick)}
 .footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #eee}
+.footer a{color:var(--brick)}
+
 @media(max-width:768px){
-  .hero-content h1{font-size:2.2rem}.menu,.order{padding:3rem 1.5rem}
+  .hero-content h1{font-size:2.2rem}
+  .menu,.order{padding:3rem 1.5rem}
   .hamburger{display:block}
-  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:#7a2912}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:var(--brick)}
   nav.open .links{display:flex}
   nav .cta-btn{display:none}
-  nav.open .cta-btn{display:inline-block}
+  nav.open .cta-btn{display:inline-block;margin-top:.4rem}
 }
 @media(max-width:480px){
   .hero-content h1{font-size:1.8rem}
@@ -60,13 +82,16 @@ nav .links a:hover{color:#f5d5a0}
   <button class="hamburger" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
   <ul class="links">
     <li><a href="#menu">Menu</a></li>
-    <li><a href="#about">Story</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
   <a href="#order" class="cta-btn">Order now</a>
 </nav>
 
 <section class="hero">
+  <svg class="swirls" viewBox="0 0 800 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M150 500 Q120 380 170 320 Q210 270 170 200 Q140 150 180 90" stroke="#F5D5A0" stroke-width="2" fill="none"/>
+    <path d="M650 500 Q680 380 630 320 Q590 270 630 200 Q660 150 620 90" stroke="#F5D5A0" stroke-width="2" fill="none"/>
+  </svg>
   <div class="hero-content">
     <div class="tag">Durban · KwaZulu-Natal</div>
     <h1>Flavour worth the trip.</h1>
@@ -75,26 +100,30 @@ nav .links a:hover{color:#f5d5a0}
   </div>
 </section>
 
+<div class="fold-divider" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#A83520" stroke-width="1.6"><path d="M3 19h18L12 4z"/><path d="M12 4v15M3 19l9-7M21 19l-9-7"/></svg>
+</div>
+
 <section class="menu" id="menu">
   <h2>Our menu</h2>
   <p class="sub">Highlights from the kitchen - full menu available in store.</p>
 
   <div class="menu-cat">
-    <h3>Bunny Chows</h3>
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="#A83520" stroke-width="2"><path d="M3 19h18L12 4z"/></svg>Bunny Chows</h3>
     <div class="menu-item"><div><div class="name">Lamb Bunny</div><div class="desc">Slow-cooked lamb curry in a quarter loaf</div></div><div class="price">R 85</div></div>
     <div class="menu-item"><div><div class="name">Chicken Bunny</div><div class="desc">Classic Durban chicken curry, beans & potato</div></div><div class="price">R 65</div></div>
     <div class="menu-item"><div><div class="name">Bean Bunny (V)</div><div class="desc">Sugar beans in a rich masala gravy</div></div><div class="price">R 55</div></div>
   </div>
 
   <div class="menu-cat">
-    <h3>Curries & Grills</h3>
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="#A83520" stroke-width="2"><path d="M3 19h18L12 4z"/></svg>Curries & Grills</h3>
     <div class="menu-item"><div><div class="name">Prawn Curry</div><div class="desc">Tiger prawns, coconut & curry leaf</div></div><div class="price">R 145</div></div>
     <div class="menu-item"><div><div class="name">Tandoori Chicken</div><div class="desc">Half chicken, naan & raita</div></div><div class="price">R 110</div></div>
     <div class="menu-item"><div><div class="name">Lamb Biryani</div><div class="desc">Layered rice, slow-braised lamb, boiled egg</div></div><div class="price">R 120</div></div>
   </div>
 
   <div class="menu-cat">
-    <h3>Sides & Drinks</h3>
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="#A83520" stroke-width="2"><path d="M3 19h18L12 4z"/></svg>Sides & Drinks</h3>
     <div class="menu-item"><div><div class="name">Samoosas (6)</div><div class="desc">Mince or veg - deep fried, crispy</div></div><div class="price">R 35</div></div>
     <div class="menu-item"><div><div class="name">Masala Steak Chips</div><div class="desc">Thick-cut chips with spiced steak bites</div></div><div class="price">R 60</div></div>
     <div class="menu-item"><div><div class="name">Mango Lassi</div><div class="desc">Creamy yoghurt, fresh Alphonso mango</div></div><div class="price">R 35</div></div>
@@ -108,7 +137,7 @@ nav .links a:hover{color:#f5d5a0}
 </section>
 
 <footer class="footer">
-  <p>Demo site by <a href="/" style="color:#7a2912;">KZN Web Studio</a> - this is not a real restaurant.</p>
+  <p>Demo site by <a href="/">KZN Web Studio</a> - this is not a real restaurant.</p>
 </footer>
 </body>
 </html>

@@ -9,51 +9,75 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --pine:#1C3A2E;
+  --pine-2:#2D5A4A;
+  --sand:#D4C9A8;
+  --contour:#4A6B5A;
+  --ember:#C97B4A;
+  --paper:#F7F5F0;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#f7f5f0;color:#1c3a2e}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--pine)}
+a{color:inherit}
 .banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
 .banner a{color:#fff;text-decoration:underline}
+
 nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(28,58,46,.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
-nav .logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.4rem;color:#d4c9a8}
+nav .logo{font-family:'Playfair Display',serif;font-weight:800;font-size:1.4rem;color:var(--sand)}
 nav .links{display:flex;gap:1.5rem;list-style:none}
-nav .links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500}
-nav .links a:hover{color:#d4c9a8}
-.cta-btn{background:#d4c9a8;color:#1c3a2e;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer}
-.cta-btn:hover{background:#c4b998}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#d4c9a8}
-.hero{min-height:90vh;background:#1c3a2e;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#1c3a2e 0%,#2d5a4a 50%,#1c3a2e 100%);opacity:.9}
-.hero-content{position:relative;z-index:1;padding:2rem;max-width:700px}
-.hero-content .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:#d4c9a8;margin-bottom:1rem}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:.85rem;font-weight:500;transition:color .2s}
+nav .links a:hover{color:var(--sand)}
+.cta-btn{background:var(--sand);color:var(--pine);padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:var(--ember);color:#fff}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--sand)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+
+/* HERO with contour-line art */
+.hero{min-height:88vh;background:var(--pine);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero .contours{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero-content{position:relative;z-index:1;padding:2rem;max-width:680px}
+.hero-content .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:var(--sand);margin-bottom:1rem}
 .hero-content h1{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:1rem}
 .hero-content p{font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:2rem}
+
 .rooms{padding:5rem 2rem;max-width:1100px;margin:0 auto}
 .rooms h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:.5rem}
 .rooms .sub{text-align:center;color:#777;margin-bottom:3rem}
 .room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .room-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.room-img{height:200px;background:#2d5a4a;display:flex;align-items:center;justify-content:center;color:#d4c9a8;font-weight:600;font-size:.9rem}
+.room-img{height:190px;background:var(--pine-2);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1rem;color:var(--sand);font-weight:600;font-size:.85rem}
+.room-img svg{position:absolute;inset:0;width:100%;height:100%;opacity:.6}
 .room-body{padding:1.5rem}
 .room-body h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:.5rem}
-.room-body .price{color:#1c3a2e;font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
+.room-body .price{color:var(--pine);font-weight:700;font-size:1.1rem;margin-bottom:.5rem}
 .room-body p{font-size:.85rem;color:#888;line-height:1.5}
-.features{padding:4rem 2rem;background:#1c3a2e;color:#fff}
-.features .inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
-.features .f-item .num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:800;color:#d4c9a8}
-.features .f-item .label{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.3rem}
-.cta-section{padding:5rem 2rem;text-align:center;background:#f7f5f0}
+
+/* FEATURES — elevation-profile strip instead of generic stat grid */
+.features{padding:4rem 2rem 3rem;background:var(--pine);color:#fff}
+.features .inner{max-width:900px;margin:0 auto;position:relative}
+.elevation svg{width:100%;height:auto;display:block}
+.f-items{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;margin-top:.5rem}
+.f-item .num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:800;color:var(--sand)}
+.f-item .label{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.2rem}
+
+.cta-section{padding:5rem 2rem;text-align:center;background:var(--paper)}
 .cta-section h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
 .cta-section p{color:#777;margin-bottom:2rem;max-width:450px;margin-left:auto;margin-right:auto;line-height:1.6}
-.cta-section .cta-btn{background:#1c3a2e;color:#d4c9a8}
+.cta-section .cta-btn{background:var(--pine);color:var(--sand)}
+.cta-section .cta-btn:hover{background:var(--ember);color:#fff}
 .footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #e8e4dc}
+
 @media(max-width:768px){
-  .hero-content h1{font-size:2.2rem}.room-grid{grid-template-columns:1fr}
-  .features .inner{grid-template-columns:repeat(2,1fr)}.rooms,.cta-section{padding:3rem 1.5rem}
+  .hero-content h1{font-size:2.2rem}
+  .room-grid{grid-template-columns:1fr}
+  .f-items{grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  .rooms,.cta-section{padding:3rem 1.5rem}
   .hamburger{display:block}
   nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:rgba(28,58,46,.95)}
   nav.open .links{display:flex}
   nav .cta-btn{display:none}
-  nav.open .cta-btn{display:inline-block}
+  nav.open .cta-btn{display:inline-block;margin-top:.4rem}
 }
 @media(max-width:480px){
   .hero-content h1{font-size:1.8rem}
@@ -67,13 +91,19 @@ nav .links a:hover{color:#d4c9a8}
   <button class="hamburger" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
   <ul class="links">
     <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#about">Experience</a></li>
     <li><a href="#book">Book</a></li>
   </ul>
   <a href="#book" class="cta-btn">Check availability</a>
 </nav>
 
 <section class="hero">
+  <svg class="contours" viewBox="0 0 800 500" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 340 Q150 280 300 320 T600 300 T800 340" stroke="#4A6B5A" stroke-width="1.5" fill="none"/>
+    <path d="M0 380 Q150 320 300 360 T600 340 T800 380" stroke="#4A6B5A" stroke-width="1.5" fill="none"/>
+    <path d="M0 420 Q150 370 300 405 T600 385 T800 420" stroke="#4A6B5A" stroke-width="1.5" fill="none"/>
+    <path d="M0 460 Q150 420 300 445 T600 430 T800 460" stroke="#4A6B5A" stroke-width="1.5" fill="none"/>
+    <path d="M0 300 Q150 240 300 280 T600 260 T800 300" stroke="#4A6B5A" stroke-width="1.5" fill="none"/>
+  </svg>
   <div class="hero-content">
     <div class="tag">KwaZulu-Natal · South Africa</div>
     <h1>Escape to the mountains.</h1>
@@ -87,7 +117,10 @@ nav .links a:hover{color:#d4c9a8}
   <p class="sub">Each cottage sleeps 2–6 guests with full kitchen and mountain views.</p>
   <div class="room-grid">
     <div class="room-card">
-      <div class="room-img">📸 Cottage exterior - stone & thatch</div>
+      <div class="room-img">
+        <svg viewBox="0 0 300 190" preserveAspectRatio="none" aria-hidden="true"><path d="M0 140 Q70 110 150 130 T300 120" stroke="#D4C9A8" stroke-width="1.5" fill="none"/><path d="M0 160 Q70 135 150 155 T300 145" stroke="#D4C9A8" stroke-width="1.5" fill="none"/></svg>
+        Bushman's Cottage
+      </div>
       <div class="room-body">
         <h3>Bushman's Cottage</h3>
         <div class="price">R 1 850 / night</div>
@@ -95,7 +128,10 @@ nav .links a:hover{color:#d4c9a8}
       </div>
     </div>
     <div class="room-card">
-      <div class="room-img">📸 Open-plan living with views</div>
+      <div class="room-img">
+        <svg viewBox="0 0 300 190" preserveAspectRatio="none" aria-hidden="true"><path d="M0 130 Q70 100 150 120 T300 110" stroke="#D4C9A8" stroke-width="1.5" fill="none"/><path d="M0 150 Q70 125 150 145 T300 135" stroke="#D4C9A8" stroke-width="1.5" fill="none"/></svg>
+        Eagle's Nest Suite
+      </div>
       <div class="room-body">
         <h3>Eagle's Nest Suite</h3>
         <div class="price">R 2 400 / night</div>
@@ -103,7 +139,10 @@ nav .links a:hover{color:#d4c9a8}
       </div>
     </div>
     <div class="room-card">
-      <div class="room-img">📸 Family cottage garden</div>
+      <div class="room-img">
+        <svg viewBox="0 0 300 190" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 Q70 120 150 140 T300 130" stroke="#D4C9A8" stroke-width="1.5" fill="none"/><path d="M0 170 Q70 145 150 165 T300 155" stroke="#D4C9A8" stroke-width="1.5" fill="none"/></svg>
+        Valley View Lodge
+      </div>
       <div class="room-body">
         <h3>Valley View Lodge</h3>
         <div class="price">R 3 200 / night</div>
@@ -115,10 +154,21 @@ nav .links a:hover{color:#d4c9a8}
 
 <section class="features">
   <div class="inner">
-    <div class="f-item"><div class="num">15+</div><div class="label">Years hosting</div></div>
-    <div class="f-item"><div class="num">4.8★</div><div class="label">TripAdvisor</div></div>
-    <div class="f-item"><div class="num">6</div><div class="label">Cottages</div></div>
-    <div class="f-item"><div class="num">50+</div><div class="label">Hiking trails nearby</div></div>
+    <div class="elevation">
+      <svg viewBox="0 0 800 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 70 Q100 20 200 55 T400 35 T600 50 T800 25" stroke="#D4C9A8" stroke-width="2" fill="none"/>
+        <circle cx="60" cy="64" r="4" fill="#C97B4A"/>
+        <circle cx="260" cy="48" r="4" fill="#C97B4A"/>
+        <circle cx="460" cy="40" r="4" fill="#C97B4A"/>
+        <circle cx="660" cy="34" r="4" fill="#C97B4A"/>
+      </svg>
+    </div>
+    <div class="f-items">
+      <div class="f-item"><div class="num">15+</div><div class="label">Years hosting</div></div>
+      <div class="f-item"><div class="num">4.8★</div><div class="label">TripAdvisor</div></div>
+      <div class="f-item"><div class="num">6</div><div class="label">Cottages</div></div>
+      <div class="f-item"><div class="num">50+</div><div class="label">Hiking trails nearby</div></div>
+    </div>
   </div>
 </section>
 
@@ -129,7 +179,7 @@ nav .links a:hover{color:#d4c9a8}
 </section>
 
 <footer class="footer">
-  <p>Demo site by <a href="/" style="color:#1c3a2e;">KZN Web Studio</a> - this is not a real lodge.</p>
+  <p>Demo site by <a href="/">KZN Web Studio</a> - this is not a real lodge.</p>
 </footer>
 </body>
 </html>

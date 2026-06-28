@@ -7,52 +7,75 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --navy:#1A2238;
+  --navy-2:#23304A;
+  --parchment:#F4F1E8;
+  --brass:#B08D4F;
+  --seal:#8C2F26;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#1a2238}
+body{font-family:'Inter',sans-serif;background:var(--parchment);color:var(--navy)}
+a{color:inherit}
 .banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
 .banner a{color:#fff;text-decoration:underline}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#1a2238;position:sticky;top:0;z-index:100}
-nav .logo{font-family:'Libre Baskerville',serif;font-weight:700;font-size:1.2rem;color:#c5a55a}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--navy);position:sticky;top:0;z-index:100}
+nav .logo{font-family:'Libre Baskerville',serif;font-weight:700;font-size:1.2rem;color:var(--brass)}
 nav .links{display:flex;gap:1.5rem;list-style:none}
-nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500}
-nav .links a:hover{color:#c5a55a}
-.cta-btn{background:#c5a55a;color:#1a2238;padding:.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer}
-.cta-btn:hover{background:#b8964e}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#c5a55a}
-.hero{min-height:80vh;background:linear-gradient(160deg,#1a2238 0%,#23304a 60%,#1a2238 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500;transition:color .2s}
+nav .links a:hover{color:var(--brass)}
+.cta-btn{background:var(--brass);color:var(--navy);padding:.6rem 1.4rem;border-radius:2px;text-decoration:none;font-weight:600;font-size:.88rem;border:none;cursor:pointer;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:#9c7a42}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--brass)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+.hero{min-height:78vh;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 60%,var(--navy) 100%);display:flex;align-items:center;justify-content:center;text-align:center}
 .hero-content{max-width:650px;padding:2rem}
-.hero-content .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:#c5a55a;margin-bottom:1rem}
-.hero-content h1{font-family:'Libre Baskerville',serif;font-size:3rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:1rem}
+.hero-content .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.25em;color:var(--brass);margin-bottom:1rem}
+.hero-content h1{font-family:'Libre Baskerville',serif;font-size:3rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:1rem}
 .hero-content p{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:2rem}
-.areas{padding:5rem 2rem;max-width:1000px;margin:0 auto}
-.areas h2{font-family:'Libre Baskerville',serif;font-size:2rem;text-align:center;margin-bottom:3rem}
-.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.area-card{background:#fff;border:1px solid #e8eaf0;border-radius:10px;padding:2rem;text-align:center;transition:box-shadow .2s}
-.area-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.06)}
-.area-card .icon{font-size:2rem;margin-bottom:1rem}
-.area-card h3{font-family:'Libre Baskerville',serif;font-size:1rem;margin-bottom:.5rem}
-.area-card p{font-size:.85rem;color:#777;line-height:1.5}
-.team{padding:4rem 2rem;background:#1a2238;color:#fff;text-align:center}
-.team h2{font-family:'Libre Baskerville',serif;font-size:1.8rem;margin-bottom:.5rem}
+
+/* SEAL divider */
+.seal-divider{display:flex;justify-content:center;padding:2.5rem 0 0}
+.seal{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:'Libre Baskerville',serif;font-size:.7rem;font-weight:700;color:var(--brass);letter-spacing:.04em}
+
+/* AREAS — statute sections, not icon cards */
+.areas{padding:3.5rem 2rem 5rem;max-width:900px;margin:0 auto}
+.areas h2{font-family:'Libre Baskerville',serif;font-size:1.9rem;text-align:center;margin-bottom:3rem}
+.statute-list{border-top:1px solid #d8d2bf}
+.statute-row{display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid #d8d2bf}
+.statute-row .sec{font-family:'Libre Baskerville',serif;font-style:italic;color:var(--seal);font-size:1rem;padding-top:.1rem}
+.statute-row h3{font-family:'Libre Baskerville',serif;font-size:1.05rem;margin-bottom:.4rem}
+.statute-row p{font-size:.9rem;color:#5a5a5a;line-height:1.55;max-width:480px}
+
+/* TEAM — monogram, not "PHOTO" placeholder */
+.team{padding:4rem 2rem;background:var(--navy);color:#fff;text-align:center}
+.team h2{font-family:'Libre Baskerville',serif;font-size:1.7rem;margin-bottom:.5rem}
 .team .sub{color:rgba(255,255,255,.5);margin-bottom:2.5rem}
 .team-grid{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
-.team-member{width:200px}
-.team-photo{width:120px;height:120px;border-radius:50%;background:#23304a;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#c5a55a;font-size:.75rem;font-weight:600}
+.team-member{width:190px}
+.team-photo{width:96px;height:96px;border-radius:50%;background:var(--navy-2);border:1.5px solid var(--brass);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:var(--brass);font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700}
 .team-member h4{font-size:.95rem;margin-bottom:.2rem}
 .team-member p{font-size:.8rem;color:rgba(255,255,255,.5)}
+
 .contact{padding:5rem 2rem;text-align:center}
-.contact h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
-.contact p{color:#777;max-width:450px;margin:0 auto 2rem;line-height:1.6}
-.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #e8eaf0}
+.contact h2{font-family:'Libre Baskerville',serif;font-size:1.9rem;margin-bottom:1rem}
+.contact p{color:#666;max-width:450px;margin:0 auto 2rem;line-height:1.6}
+.footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #d8d2bf}
+.footer a{color:var(--brass)}
+
 @media(max-width:768px){
-  .hero-content h1{font-size:2rem}.area-grid{grid-template-columns:1fr}
+  .hero-content h1{font-size:2.1rem}
+  .statute-row{grid-template-columns:44px 1fr;gap:1rem}
+  .areas{padding:2.5rem 1.5rem 3.5rem}
   .hamburger{display:block}
-  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:#1a2238}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:var(--navy)}
   nav.open .links{display:flex}
   nav .cta-btn{display:none}
-  nav.open .cta-btn{display:inline-block}
+  nav.open .cta-btn{display:inline-block;margin-top:.4rem}
 }
 @media(max-width:480px){
   .hero-content h1{font-size:1.8rem}
@@ -81,15 +104,17 @@ nav .links a:hover{color:#c5a55a}
   </div>
 </section>
 
+<div class="seal-divider" aria-hidden="true"><div class="seal">CLC</div></div>
+
 <section class="areas" id="areas">
   <h2>Practice areas</h2>
-  <div class="area-grid">
-    <div class="area-card"><div class="icon">🏠</div><h3>Property & Conveyancing</h3><p>Transfers, bond registrations and sectional title work.</p></div>
-    <div class="area-card"><div class="icon">📄</div><h3>Wills & Estates</h3><p>Drafting wills, administering deceased estates and trusts.</p></div>
-    <div class="area-card"><div class="icon">⚖️</div><h3>Commercial Law</h3><p>Contracts, company formations and shareholder agreements.</p></div>
-    <div class="area-card"><div class="icon">👨‍👩‍👧</div><h3>Family Law</h3><p>Divorce, custody, maintenance and protection orders.</p></div>
-    <div class="area-card"><div class="icon">🔨</div><h3>Litigation</h3><p>Civil and commercial disputes in the High and Magistrate's Court.</p></div>
-    <div class="area-card"><div class="icon">💼</div><h3>Labour Law</h3><p>CCMA representation, disciplinary procedures and contracts.</p></div>
+  <div class="statute-list">
+    <div class="statute-row"><div class="sec">§01</div><div><h3>Property &amp; conveyancing</h3><p>Transfers, bond registrations and sectional title work.</p></div></div>
+    <div class="statute-row"><div class="sec">§02</div><div><h3>Wills &amp; estates</h3><p>Drafting wills, administering deceased estates and trusts.</p></div></div>
+    <div class="statute-row"><div class="sec">§03</div><div><h3>Commercial law</h3><p>Contracts, company formations and shareholder agreements.</p></div></div>
+    <div class="statute-row"><div class="sec">§04</div><div><h3>Family law</h3><p>Divorce, custody, maintenance and protection orders.</p></div></div>
+    <div class="statute-row"><div class="sec">§05</div><div><h3>Litigation</h3><p>Civil and commercial disputes in the High and Magistrate's Court.</p></div></div>
+    <div class="statute-row"><div class="sec">§06</div><div><h3>Labour law</h3><p>CCMA representation, disciplinary procedures and contracts.</p></div></div>
   </div>
 </section>
 
@@ -97,9 +122,9 @@ nav .links a:hover{color:#c5a55a}
   <h2>Our team</h2>
   <p class="sub">Experienced attorneys who know the North Coast.</p>
   <div class="team-grid">
-    <div class="team-member"><div class="team-photo">PHOTO</div><h4>Sarah Naidoo</h4><p>Director · Property</p></div>
-    <div class="team-member"><div class="team-photo">PHOTO</div><h4>James van Wyk</h4><p>Director · Litigation</p></div>
-    <div class="team-member"><div class="team-photo">PHOTO</div><h4>Thandi Mkhize</h4><p>Associate · Family Law</p></div>
+    <div class="team-member"><div class="team-photo">SN</div><h4>Sarah Naidoo</h4><p>Director · Property</p></div>
+    <div class="team-member"><div class="team-photo">JvW</div><h4>James van Wyk</h4><p>Director · Litigation</p></div>
+    <div class="team-member"><div class="team-photo">TM</div><h4>Thandi Mkhize</h4><p>Associate · Family Law</p></div>
   </div>
 </section>
 
@@ -110,7 +135,7 @@ nav .links a:hover{color:#c5a55a}
 </section>
 
 <footer class="footer">
-  <p>Demo site by <a href="/" style="color:#c5a55a;">KZN Web Studio</a> - this is not a real law firm.</p>
+  <p>Demo site by <a href="/">KZN Web Studio</a> - this is not a real law firm.</p>
 </footer>
 </body>
 </html>

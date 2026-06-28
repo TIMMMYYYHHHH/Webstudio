@@ -7,57 +7,94 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+:root{
+  --charcoal:#1B1B1B;
+  --charcoal-2:#242424;
+  --chalk:#F2F0EA;
+  --red:#D7263D;
+  --steel:#8A8A85;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff}
+body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--chalk)}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
 .banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
 .banner a{color:#fff;text-decoration:underline}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(10,10,10,.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
-nav .logo{font-weight:900;font-size:1.4rem;color:#ff8c00;text-transform:uppercase;letter-spacing:.05em}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(27,27,27,.95);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;border-bottom:1px solid #2c2c2c}
+nav .logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--chalk);text-transform:uppercase;letter-spacing:.04em}
+nav .logo span{color:var(--red)}
 nav .links{display:flex;gap:1.5rem;list-style:none}
-nav .links a{text-decoration:none;color:rgba(255,255,255,.5);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-nav .links a:hover{color:#ff8c00}
-.cta-btn{background:#ff8c00;color:#0a0a0a;padding:.65rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.03em}
-.cta-btn:hover{background:#e67e00}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#ff8c00}
-.hero{min-height:90vh;background:linear-gradient(135deg,#0a0a0a 0%,#1a1200 50%,#0a0a0a 100%);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero-content{max-width:700px;padding:2rem}
-.hero-content h1{font-size:4rem;font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1rem;background:linear-gradient(135deg,#ff8c00,#ffb347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-content p{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:2rem}
-.classes{padding:5rem 2rem;max-width:1000px;margin:0 auto}
-.classes h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem;text-transform:uppercase}
-.class-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.class-card{background:#141414;border:1px solid #222;border-radius:12px;padding:1.8rem;transition:border-color .2s}
-.class-card:hover{border-color:#ff8c00}
-.class-card .time{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#ff8c00;margin-bottom:.5rem}
-.class-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-.class-card p{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.5}
-.pricing{padding:5rem 2rem;background:#141414}
-.pricing h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem;text-transform:uppercase}
+nav .links a{text-decoration:none;color:var(--steel);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;transition:color .2s}
+nav .links a:hover{color:var(--red)}
+.cta-btn{background:var(--red);color:#fff;padding:.65rem 1.5rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:.85rem;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.03em;display:inline-block;transition:background .2s}
+.cta-btn:hover{background:#b81e32}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--chalk)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* HERO — solid type, stopwatch ring instead of gradient text */
+.hero{min-height:78vh;background:var(--charcoal);position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero .ring{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:480px;height:480px;opacity:.35}
+.hero-content{max-width:680px;padding:2rem;position:relative;z-index:1}
+.hero-content .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--red);margin-bottom:1.2rem}
+.hero-content h1{font-family:'Barlow Condensed',sans-serif;font-size:4rem;font-weight:800;text-transform:uppercase;line-height:1;margin-bottom:1.2rem}
+.hero-content h1 .underline{display:block;position:relative}
+.hero-content h1 .underline::after{content:'';position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;width:90px;height:4px;background:var(--red)}
+.hero-content p{font-size:1.05rem;color:var(--steel);line-height:1.6;margin-bottom:2.2rem;max-width:440px;margin-left:auto;margin-right:auto}
+
+/* TICK divider */
+.tick-divider{display:flex;justify-content:center;padding:0 0 0;background:var(--charcoal)}
+.tick-divider svg{width:120px;height:20px;opacity:.5}
+
+/* SCHEDULE — real weekly timetable, not card grid */
+.classes{padding:5rem 2rem;max-width:760px;margin:0 auto}
+.classes h2{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;text-align:center;text-transform:uppercase;margin-bottom:.5rem}
+.classes .sub{text-align:center;color:var(--steel);margin-bottom:3rem;font-size:.92rem}
+.timetable{border-top:1px solid #2c2c2c}
+.day-group{border-bottom:1px solid #2c2c2c}
+.day-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;color:var(--red);padding:1.1rem 0 .2rem}
+.class-row{display:grid;grid-template-columns:90px 1fr auto;gap:1rem;align-items:baseline;padding:.7rem 0}
+.class-row .time{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--steel)}
+.class-row .name{font-weight:600;font-size:.98rem}
+.class-row .note{font-size:.8rem;color:var(--steel);text-align:right;white-space:nowrap}
+.open-gym{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;color:var(--steel);font-size:.88rem}
+.open-gym strong{color:var(--chalk);font-family:'IBM Plex Mono',monospace}
+
+/* PRICING */
+.pricing{padding:5rem 2rem;background:var(--charcoal-2)}
+.pricing h2{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:3rem;text-transform:uppercase}
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
-.price-card{background:#0a0a0a;border:1px solid #222;border-radius:12px;padding:2rem;text-align:center}
-.price-card.pop{border-color:#ff8c00;position:relative}
-.price-card.pop::before{content:'POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#ff8c00;color:#0a0a0a;font-size:.65rem;font-weight:800;padding:3px 12px;border-radius:10px;letter-spacing:.1em}
-.price-card h3{font-size:1rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase}
-.price-card .amount{font-size:2.5rem;font-weight:900;color:#ff8c00}
-.price-card .period{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
+.price-card{background:var(--charcoal);border:1px solid #2c2c2c;border-radius:2px;padding:2rem;text-align:center}
+.price-card.pop{border-color:var(--red);position:relative}
+.price-card.pop::before{content:'POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:.65rem;font-weight:800;padding:3px 12px;letter-spacing:.1em}
+.price-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase}
+.price-card .amount{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:800;color:var(--red)}
+.price-card .period{font-size:.8rem;color:var(--steel);margin-bottom:1.5rem}
 .price-card ul{list-style:none;margin-bottom:1.5rem;text-align:left}
-.price-card li{font-size:.85rem;color:rgba(255,255,255,.5);padding:.4rem 0;border-bottom:1px solid #1a1a1a}
+.price-card li{font-size:.85rem;color:var(--steel);padding:.4rem 0;border-bottom:1px solid #2c2c2c}
+
 .join{padding:5rem 2rem;text-align:center}
-.join h2{font-size:2rem;font-weight:800;text-transform:uppercase;margin-bottom:1rem}
-.join p{color:rgba(255,255,255,.4);max-width:400px;margin:0 auto 2rem;line-height:1.6}
-.footer{padding:2rem;text-align:center;color:rgba(255,255,255,.3);font-size:.8rem;border-top:1px solid #1a1a1a}
+.join h2{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;text-transform:uppercase;margin-bottom:1rem}
+.join p{color:var(--steel);max-width:400px;margin:0 auto 2rem;line-height:1.6}
+.footer{padding:2rem;text-align:center;color:#5c5c5c;font-size:.8rem;border-top:1px solid #2c2c2c}
+
 @media(max-width:768px){
-  .hero-content h1{font-size:2.5rem}.class-grid,.price-grid{grid-template-columns:1fr}
+  .hero-content h1{font-size:2.6rem}
+  .hero .ring{display:none}
+  .class-row{grid-template-columns:70px 1fr;gap:.6rem}
+  .class-row .note{grid-column:2;text-align:left}
+  .price-grid{grid-template-columns:1fr}
+  .classes{padding:3rem 1.5rem}
   .hamburger{display:block}
-  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:rgba(10,10,10,.95)}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:rgba(27,27,27,.97)}
   nav.open .links{display:flex}
   nav .cta-btn{display:none}
-  nav.open .cta-btn{display:inline-block}
+  nav.open .cta-btn{display:inline-block;margin-top:.4rem}
 }
 @media(max-width:480px){
-  .hero-content h1{font-size:2rem}
+  .hero-content h1{font-size:2.1rem}
   .price-card .amount{font-size:2rem}
 }
 </style>
@@ -65,7 +102,7 @@ nav .links a:hover{color:#ff8c00}
 <body>
 <div class="banner">This is a <strong>KZN Web Studio demo</strong> - not a real gym. <a href="/">See what we build →</a></div>
 <nav>
-  <div class="logo">Zinto Fitness</div>
+  <div class="logo">Zinto<span>.</span></div>
   <button class="hamburger" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
   <ul class="links">
     <li><a href="#classes">Classes</a></li>
@@ -76,22 +113,59 @@ nav .links a:hover{color:#ff8c00}
 </nav>
 
 <section class="hero">
+  <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="90" stroke="#D7263D" stroke-width="1.5" fill="none"/>
+    <circle cx="100" cy="100" r="70" stroke="#8A8A85" stroke-width="1" fill="none"/>
+    <line x1="100" y1="10" x2="100" y2="22" stroke="#D7263D" stroke-width="2"/>
+    <line x1="100" y1="178" x2="100" y2="190" stroke="#8A8A85" stroke-width="2"/>
+    <line x1="10" y1="100" x2="22" y2="100" stroke="#8A8A85" stroke-width="2"/>
+    <line x1="178" y1="100" x2="190" y2="100" stroke="#8A8A85" stroke-width="2"/>
+  </svg>
   <div class="hero-content">
-    <h1>Train harder. Live better.</h1>
+    <div class="tag">◦ Durban North · Functional fitness</div>
+    <h1><span class="underline">Train harder.</span> Live better.</h1>
     <p>Functional fitness classes, personal training and open gym - right in the heart of Durban North.</p>
     <a href="#classes" class="cta-btn">View schedule</a>
   </div>
 </section>
 
+<div class="tick-divider" aria-hidden="true">
+  <svg viewBox="0 0 120 20"><line x1="0" y1="10" x2="120" y2="10" stroke="#2c2c2c" stroke-width="1"/><circle cx="60" cy="10" r="4" fill="#D7263D"/></svg>
+</div>
+
 <section class="classes" id="classes">
   <h2>This week's classes</h2>
-  <div class="class-grid">
-    <div class="class-card"><div class="time">Mon · Wed · Fri - 06:00</div><h3>HIIT Burn</h3><p>30-min high-intensity interval. All levels.</p></div>
-    <div class="class-card"><div class="time">Tue · Thu - 07:00</div><h3>Strength Lab</h3><p>Barbell-focused strength. Progressive overload.</p></div>
-    <div class="class-card"><div class="time">Mon · Wed - 17:30</div><h3>Box Fit</h3><p>Boxing-inspired cardio. Pads, bags and core.</p></div>
-    <div class="class-card"><div class="time">Sat - 08:00</div><h3>Weekend WOD</h3><p>Team workout of the day. Bring a friend.</p></div>
-    <div class="class-card"><div class="time">Tue · Thu - 18:00</div><h3>Yoga Flow</h3><p>Recovery-focused vinyasa. Breathe and stretch.</p></div>
-    <div class="class-card"><div class="time">Daily - 05:30–20:00</div><h3>Open Gym</h3><p>Full floor access. Racks, dumbbells, cardio.</p></div>
+  <p class="sub">Logged, not guessed. Here's exactly what's on.</p>
+  <div class="timetable">
+    <div class="day-group">
+      <div class="day-label">Monday</div>
+      <div class="class-row"><div class="time mono">06:00</div><div class="name">HIIT Burn</div><div class="note">30 min · all levels</div></div>
+      <div class="class-row"><div class="time mono">17:30</div><div class="name">Box Fit</div><div class="note">Pads, bags & core</div></div>
+    </div>
+    <div class="day-group">
+      <div class="day-label">Tuesday</div>
+      <div class="class-row"><div class="time mono">07:00</div><div class="name">Strength Lab</div><div class="note">Barbell · progressive</div></div>
+      <div class="class-row"><div class="time mono">18:00</div><div class="name">Yoga Flow</div><div class="note">Recovery vinyasa</div></div>
+    </div>
+    <div class="day-group">
+      <div class="day-label">Wednesday</div>
+      <div class="class-row"><div class="time mono">06:00</div><div class="name">HIIT Burn</div><div class="note">30 min · all levels</div></div>
+      <div class="class-row"><div class="time mono">17:30</div><div class="name">Box Fit</div><div class="note">Pads, bags & core</div></div>
+    </div>
+    <div class="day-group">
+      <div class="day-label">Thursday</div>
+      <div class="class-row"><div class="time mono">07:00</div><div class="name">Strength Lab</div><div class="note">Barbell · progressive</div></div>
+      <div class="class-row"><div class="time mono">18:00</div><div class="name">Yoga Flow</div><div class="note">Recovery vinyasa</div></div>
+    </div>
+    <div class="day-group">
+      <div class="day-label">Friday</div>
+      <div class="class-row"><div class="time mono">06:00</div><div class="name">HIIT Burn</div><div class="note">30 min · all levels</div></div>
+    </div>
+    <div class="day-group">
+      <div class="day-label">Saturday</div>
+      <div class="class-row"><div class="time mono">08:00</div><div class="name">Weekend WOD</div><div class="note">Team · bring a friend</div></div>
+    </div>
+    <div class="open-gym">Open gym floor access <strong>daily, 05:30–20:00</strong></div>
   </div>
 </section>
 
@@ -129,7 +203,7 @@ nav .links a:hover{color:#ff8c00}
 </section>
 
 <footer class="footer">
-  <p>Demo site by <a href="/" style="color:#ff8c00;">KZN Web Studio</a> - this is not a real gym.</p>
+  <p>Demo site by <a href="/" style="color:#D7263D;">KZN Web Studio</a> - this is not a real gym.</p>
 </footer>
 </body>
 </html>

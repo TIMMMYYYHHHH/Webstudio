@@ -7,53 +7,88 @@
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+:root{
+  --ink:#0E0E0E;
+  --ink-2:#181818;
+  --yellow:#F5C518;
+  --concrete:#C9C5BC;
+  --blue:#2B4C7E;
+  --paper:#FAFAF9;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#fafafa;color:#0a0a0a}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink)}
+a{color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
 .banner{background:#ff5a1f;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:500}
 .banner a{color:#fff;text-decoration:underline}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:#0a0a0a;position:sticky;top:0;z-index:100}
-nav .logo{font-weight:800;font-size:1.3rem;color:#f5c518}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--ink);position:sticky;top:0;z-index:100}
+nav .logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--yellow);text-transform:uppercase;letter-spacing:.03em}
 nav .links{display:flex;gap:1.5rem;list-style:none}
-nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500}
-nav .links a:hover{color:#f5c518}
-.cta-btn{background:#f5c518;color:#0a0a0a;padding:.6rem 1.4rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;border:none;cursor:pointer}
+nav .links a{text-decoration:none;color:rgba(255,255,255,.6);font-size:.85rem;font-weight:500;transition:color .2s}
+nav .links a:hover{color:var(--yellow)}
+.cta-btn{background:var(--yellow);color:var(--ink);padding:.6rem 1.4rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:.85rem;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.04em;transition:background .2s;display:inline-block}
 .cta-btn:hover{background:#e0b310}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#f5c518}
-.hero{min-height:85vh;background:#0a0a0a;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--yellow)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+
+/* HERO with blueprint illustration */
+.hero{min-height:80vh;background:var(--ink);display:grid;grid-template-columns:1.1fr 1fr;align-items:center}
 .hero-text{padding:4rem 3rem;color:#fff}
-.hero-text .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:#f5c518;margin-bottom:1rem}
-.hero-text h1{font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1rem}
-.hero-text h1 span{color:#f5c518}
-.hero-text p{font-size:1.05rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:2rem;max-width:460px}
-.hero-img{height:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;color:#f5c518;font-weight:600}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#f5c518;padding:2rem}
-.stat{text-align:center}
-.stat strong{display:block;font-size:2rem;font-weight:800;color:#0a0a0a}
-.stat span{font-size:.8rem;color:rgba(10,10,10,.6)}
-.services{padding:5rem 2rem;max-width:1000px;margin:0 auto}
-.services h2{font-size:2rem;font-weight:800;text-align:center;margin-bottom:3rem}
-.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.srv-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:2rem}
-.srv-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-.srv-card p{font-size:.9rem;color:#777;line-height:1.5}
-.quote-section{padding:5rem 2rem;background:#0a0a0a;color:#fff;text-align:center}
-.quote-section h2{font-size:2rem;font-weight:800;margin-bottom:1rem}
-.quote-section p{color:rgba(255,255,255,.6);max-width:450px;margin:0 auto 2rem;line-height:1.6}
-.quote-section .cta-btn{background:#f5c518;color:#0a0a0a}
+.hero-text .tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--yellow);margin-bottom:1.2rem}
+.hero-text h1{font-family:'Barlow Condensed',sans-serif;font-size:3.4rem;font-weight:800;line-height:1.05;text-transform:uppercase;margin-bottom:1rem}
+.hero-text h1 span{color:var(--yellow)}
+.hero-text p{font-size:1.02rem;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:2rem;max-width:420px}
+.blueprint{height:100%;background:var(--blue);position:relative;overflow:hidden;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px}
+.blueprint svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* MEASUREMENT STRIP (replaces generic stat-grid) */
+.measure{background:var(--yellow);padding:0}
+.measure-track{display:flex;overflow-x:auto;max-width:1100px;margin:0 auto}
+.measure-item{flex:1;min-width:160px;padding:1.6rem 1.5rem;text-align:center;border-right:1px dashed rgba(14,14,14,.25)}
+.measure-item:last-child{border-right:none}
+.measure-item strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--ink)}
+.measure-item span{font-size:.72rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;color:rgba(14,14,14,.65)}
+
+/* SERVICES — scope-of-work list with dimension dividers */
+.services{padding:5rem 2rem;max-width:980px;margin:0 auto}
+.services-head{margin-bottom:3rem}
+.services-head .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);margin-bottom:.6rem}
+.services-head h2{font-family:'Barlow Condensed',sans-serif;font-size:2.3rem;font-weight:800;text-transform:uppercase}
+.scope-list{border-top:2px solid var(--ink)}
+.scope-row{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;padding:1.8rem 0;border-bottom:1px solid #e3e1da;position:relative}
+.scope-row .dim{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--blue);padding-top:.2rem;display:flex;align-items:center;gap:6px}
+.scope-row .dim::after{content:'';flex:1;height:1px;background:repeating-linear-gradient(to right,var(--blue) 0,var(--blue) 4px,transparent 4px,transparent 8px)}
+.scope-row h3{font-size:1.1rem;font-weight:700;margin-bottom:.3rem}
+.scope-row p{font-size:.92rem;color:#666;line-height:1.55;max-width:480px}
+
+.quote-section{padding:5rem 2rem;background:var(--ink);color:#fff;text-align:center}
+.quote-section h2{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:800;text-transform:uppercase;margin-bottom:1rem}
+.quote-section p{color:rgba(255,255,255,.55);max-width:450px;margin:0 auto 2rem;line-height:1.6}
+.quote-section .cta-btn{background:var(--yellow);color:var(--ink)}
 .footer{padding:2rem;text-align:center;color:#999;font-size:.8rem;border-top:1px solid #eee}
+.footer a{color:var(--blue)}
+
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr}.hero-img{min-height:250px}.hero-text{padding:2rem 1.5rem}.hero-text h1{font-size:2rem}
-  .stats{grid-template-columns:repeat(2,1fr);gap:1rem}.srv-grid{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr}
+  .blueprint{min-height:240px}
+  .hero-text{padding:2.5rem 1.5rem}
+  .hero-text h1{font-size:2.4rem}
+  .measure-track{flex-direction:column}
+  .measure-item{border-right:none;border-bottom:1px dashed rgba(14,14,14,.25)}
+  .measure-item:last-child{border-bottom:none}
+  .scope-row{grid-template-columns:60px 1fr;gap:1rem}
+  .services{padding:3rem 1.5rem}
   .hamburger{display:block}
-  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:#0a0a0a}
+  nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:1rem 2rem;gap:.5rem;background:var(--ink)}
   nav.open .links{display:flex}
   nav .cta-btn{display:none}
-  nav.open .cta-btn{display:inline-block}
+  nav.open .cta-btn{display:inline-block;margin-top:.4rem}
 }
 @media(max-width:480px){
-  .hero-text h1{font-size:1.8rem}
+  .hero-text h1{font-size:1.9rem}
 }
 </style>
 </head>
@@ -64,7 +99,6 @@ nav .links a:hover{color:#f5c518}
   <button class="hamburger" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
   <ul class="links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#quote">Get a quote</a></li>
   </ul>
   <a href="#quote" class="cta-btn">Free quote</a>
@@ -72,28 +106,57 @@ nav .links a:hover{color:#f5c518}
 
 <section class="hero">
   <div class="hero-text">
-    <div class="tag">Construction · KwaZulu-Natal</div>
+    <div class="tag">◦ Construction · KwaZulu-Natal</div>
     <h1>We build it <span>right.</span></h1>
     <p>Residential and commercial construction across KZN. From foundations to finishing - quality you can stand on.</p>
     <a href="#quote" class="cta-btn">Get a free quote</a>
   </div>
-  <div class="hero-img">📸 Construction site - team at work</div>
+  <div class="blueprint" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none">
+      <path d="M70 320 L70 120 L200 60 L330 120 L330 320 Z" stroke="#F5C518" stroke-width="2" opacity=".85"/>
+      <path d="M70 320 L330 320" stroke="#F5C518" stroke-width="2" opacity=".85"/>
+      <line x1="70" y1="345" x2="330" y2="345" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <line x1="70" y1="338" x2="70" y2="352" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <line x1="330" y1="338" x2="330" y2="352" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <text x="180" y="364" fill="#fff" font-size="11" opacity=".6" font-family="monospace">12.4m</text>
+      <line x1="355" y1="120" x2="355" y2="320" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <line x1="348" y1="120" x2="362" y2="120" stroke="#fff" stroke-width="1" opacity=".5"/>
+      <line x1="348" y1="320" x2="362" y2="320" stroke="#fff" stroke-width="1" opacity=".5"/>
+    </svg>
+  </div>
 </section>
 
-<div class="stats">
-  <div class="stat"><strong>200+</strong><span>Projects completed</span></div>
-  <div class="stat"><strong>18</strong><span>Years experience</span></div>
-  <div class="stat"><strong>NHBRC</strong><span>Registered</span></div>
-  <div class="stat"><strong>100%</strong><span>Completion rate</span></div>
+<div class="measure">
+  <div class="measure-track">
+    <div class="measure-item"><strong>200+</strong><span>Projects completed</span></div>
+    <div class="measure-item"><strong>18</strong><span>Years experience</span></div>
+    <div class="measure-item"><strong>NHBRC</strong><span>Registered</span></div>
+    <div class="measure-item"><strong>100%</strong><span>Completion rate</span></div>
+  </div>
 </div>
 
 <section class="services" id="services">
-  <h2>What we do</h2>
-  <div class="srv-grid">
-    <div class="srv-card"><h3>New Builds</h3><p>Full residential and commercial construction from plan to handover.</p></div>
-    <div class="srv-card"><h3>Renovations</h3><p>Kitchen refits, bathroom upgrades, extensions and modernisations.</p></div>
-    <div class="srv-card"><h3>Project Management</h3><p>End-to-end coordination so you don't have to chase subcontractors.</p></div>
-    <div class="srv-card"><h3>Maintenance</h3><p>Ongoing building maintenance, repairs and compliance work.</p></div>
+  <div class="services-head">
+    <div class="eyebrow">◦ Scope of work</div>
+    <h2>What we do</h2>
+  </div>
+  <div class="scope-list">
+    <div class="scope-row">
+      <div class="dim">01</div>
+      <div><h3>New builds</h3><p>Full residential and commercial construction from plan to handover.</p></div>
+    </div>
+    <div class="scope-row">
+      <div class="dim">02</div>
+      <div><h3>Renovations</h3><p>Kitchen refits, bathroom upgrades, extensions and modernisations.</p></div>
+    </div>
+    <div class="scope-row">
+      <div class="dim">03</div>
+      <div><h3>Project management</h3><p>End-to-end coordination so you don't have to chase subcontractors.</p></div>
+    </div>
+    <div class="scope-row">
+      <div class="dim">04</div>
+      <div><h3>Maintenance</h3><p>Ongoing building maintenance, repairs and compliance work.</p></div>
+    </div>
   </div>
 </section>
 
@@ -104,7 +167,7 @@ nav .links a:hover{color:#f5c518}
 </section>
 
 <footer class="footer">
-  <p>Demo site by <a href="/" style="color:#f5c518;">KZN Web Studio</a> - this is not a real construction company.</p>
+  <p>Demo site by <a href="/">KZN Web Studio</a> - this is not a real construction company.</p>
 </footer>
 </body>
 </html>
