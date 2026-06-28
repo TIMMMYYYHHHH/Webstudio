@@ -6,20 +6,17 @@
 <title>KZN Web Studio - Professional websites for small businesses in KwaZulu-Natal</title>
 <meta name="description" content="Custom-designed, mobile-responsive websites for small businesses across KZN. No setup fee, from R500/month.">
 <link rel="icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Archivo',sans-serif;background:#f5f0e8;color:#0a0a0a;overflow-x:hidden}
+body{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f0e8;color:#0a0a0a;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:200;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);padding:0 2rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav .brand{display:flex;align-items:center;gap:6px;font-weight:800;font-size:1.2rem;color:#f5f0e8}
+.nav .brand{display:flex;align-items:center;gap:6px;font-weight:850;font-size:1.2rem;color:#f5f0e8}
 .nav .brand .accent{color:#ff5a1f}
 .nav .brand .dot{color:rgba(245,240,232,.35);margin:0 2px}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
@@ -27,33 +24,44 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:#ff5a1f}
 .nav-cta{background:#ff5a1f;color:#fff;padding:.5rem 1.2rem;border-radius:6px;font-weight:700;font-size:.85rem;transition:background .2s}
 .nav-cta:hover{background:#e04d15}
-.hamburger{display:none;background:none;border:none;color:#f5f0e8;font-size:1.5rem;cursor:pointer;padding:4px}
+.hamburger{display:none;background:none;border:1px solid rgba(245,240,232,.18);border-radius:8px;color:#f5f0e8;font-size:.8rem;font-weight:800;cursor:pointer;padding:.45rem .7rem}
 
 /* HERO */
-.hero{background:#0a0a0a;padding:6rem 2rem 5rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 60% 40%,rgba(255,90,31,.08) 0%,transparent 60%);pointer-events:none}
-.hero-inner{max-width:750px;margin:0 auto;position:relative;z-index:1}
-.hero .tag{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:#ff5a1f;margin-bottom:1.5rem}
-.hero h1{font-size:4rem;font-weight:900;color:#f5f0e8;line-height:1.05;letter-spacing:-2px;margin-bottom:1.5rem}
+.hero{background:#0a0a0a;padding:5rem 2rem 4rem;min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:auto -20% -35% 45%;height:65%;background:radial-gradient(circle,rgba(255,90,31,.13) 0%,transparent 64%);pointer-events:none}
+.hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.78fr);gap:4rem;align-items:center;width:100%}
+.hero-copy{max-width:660px}
+.hero .tag{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:#ff5a1f;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(3rem,7vw,5.8rem);font-weight:900;color:#f5f0e8;line-height:.96;letter-spacing:-.065em;margin-bottom:1.4rem}
 .hero h1 .em{color:#ff5a1f}
-.hero p{font-size:1.15rem;color:rgba(245,240,232,.55);line-height:1.7;margin-bottom:2.5rem;max-width:550px;margin-left:auto;margin-right:auto}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:#ff5a1f;color:#fff;padding:.75rem 1.8rem;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .2s;border:none;cursor:pointer;font-family:'Archivo',sans-serif}
-.btn-primary:hover{background:#e04d15}
-.btn-ghost{border:1.5px solid rgba(245,240,232,.2);color:rgba(245,240,232,.7);padding:.75rem 1.8rem;border-radius:8px;font-weight:600;font-size:.95rem;transition:all .2s}
-.btn-ghost:hover{border-color:#ff5a1f;color:#ff5a1f}
+.hero p{font-size:1.12rem;color:rgba(245,240,232,.62);line-height:1.65;margin-bottom:2rem;max-width:520px}
+.hero-btns{display:flex;gap:1rem;justify-content:flex-start;flex-wrap:wrap}
+.btn-primary{background:#ff5a1f;color:#fff;padding:.78rem 1.8rem;border-radius:8px;font-weight:800;font-size:.95rem;transition:background .2s,transform .2s;border:none;cursor:pointer;font-family:inherit;white-space:nowrap}
+.btn-primary:hover{background:#e04d15}.btn-primary:active{transform:translateY(1px)}
+.btn-ghost{border:1.5px solid rgba(245,240,232,.24);color:rgba(245,240,232,.82);padding:.78rem 1.8rem;border-radius:8px;font-weight:700;font-size:.95rem;transition:all .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:#ff5a1f;color:#ff5a1f}.btn-ghost:active{transform:translateY(1px)}
+.hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;transform:rotate(-2deg)}
+.hero-shot{overflow:hidden;background:#171717;border:1px solid rgba(245,240,232,.1);box-shadow:0 22px 70px rgba(0,0,0,.28)}
+.hero-shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+.hero-shot.large{grid-row:span 2;height:430px;border-radius:18px}.hero-shot.small{height:205px;border-radius:14px}.hero-shot.offset{transform:translateY(42px)}
 
 /* LOGO MARQUEE */
 .marquee{background:#0a0a0a;border-top:1px solid rgba(245,240,232,.06);padding:1.5rem 0;overflow:hidden}
 .marquee-track{display:flex;gap:3rem;animation:scroll 25s linear infinite;width:max-content}
-.marquee-track span{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:1px;color:rgba(245,240,232,.15);white-space:nowrap}
+.marquee-track span{font-family:inherit;font-weight:800;font-size:1.1rem;letter-spacing:1px;color:rgba(245,240,232,.15);white-space:nowrap}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .folio-card,.folio-thumb img,.btn-primary,.btn-ghost{transition:none}
+}
 
 /* SECTION SHARED */
 .section{padding:6rem 2rem}
 .section-inner{max-width:1100px;margin:0 auto}
-.section-tag{font-family:'Space Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#ff5a1f;margin-bottom:.75rem}
-.section-title{font-size:2.8rem;font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.section-kicker{font-size:.85rem;font-weight:800;color:#ff5a1f;margin-bottom:.75rem}
+.section-title{font-size:2.8rem;font-weight:850;line-height:1.08;letter-spacing:-1.5px;margin-bottom:1rem}
 .section-sub{font-size:1.05rem;color:#888;line-height:1.6;max-width:500px}
 
 /* PORTFOLIO */
@@ -68,14 +76,14 @@ img{max-width:100%;display:block}
 .folio-card:hover .folio-thumb img{transform:scale(1.05)}
 .folio-info{padding:1.2rem 1.4rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-top:3px solid #ff5a1f}
 .folio-info .name{color:#f5f0e8;font-weight:800;font-size:1.15rem;letter-spacing:-.3px}
-.folio-info .cat{color:rgba(245,240,232,.5);font-size:.8rem;font-family:'Space Mono',monospace;margin-top:5px}
+.folio-info .cat{color:rgba(245,240,232,.5);font-size:.8rem;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:5px}
 .folio-info .arrow{color:#ff5a1f;font-size:1.2rem;font-weight:800;flex-shrink:0}
 
 /* SERVICES */
 .services-bg{background:#0a0a0a;color:#f5f0e8}
 .srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:3rem;background:rgba(245,240,232,.08)}
 .srv-card{background:#0a0a0a;padding:2.5rem}
-.srv-card .no{font-family:'Space Mono',monospace;font-size:.7rem;color:#ff5a1f;letter-spacing:.1em;margin-bottom:.75rem}
+.srv-card .no{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.75rem;color:#ff5a1f;margin-bottom:.75rem}
 .srv-card h3{font-size:1.3rem;font-weight:800;margin-bottom:.5rem}
 .srv-card p{font-size:.9rem;color:rgba(245,240,232,.5);line-height:1.6}
 
@@ -88,14 +96,14 @@ img{max-width:100%;display:block}
 .price-card .plan-name{font-size:1.2rem;font-weight:800;margin-bottom:.3rem}
 .price-card .amount{font-size:3rem;font-weight:900;letter-spacing:-2px}
 .price-card .amount small{font-size:1rem;font-weight:500;color:#888;letter-spacing:0}
-.price-card .term{font-family:'Space Mono',monospace;font-size:.7rem;color:#999;margin-bottom:.4rem}
+.price-card .term{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.7rem;color:#999;margin-bottom:.4rem}
 .price-card .setup{background:#e8f5e8;color:#2d7a2d;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:1.2rem}
 .price-card .blurb{font-size:.9rem;color:#666;line-height:1.5;margin-bottom:1.2rem}
 .price-card ul{list-style:none;margin-bottom:1.5rem}
 .price-card li{font-size:.85rem;padding:.45rem 0;border-bottom:1px solid #f0ece4;display:flex;align-items:center;gap:.4rem}
-.price-card li::before{content:'✓';color:#ff5a1f;font-weight:800;font-size:.8rem}
+.price-card li::before{content:'Included';color:#ff5a1f;font-weight:800;font-size:.65rem;text-transform:uppercase;letter-spacing:.04em}
 .price-card li.not{color:#bbb}
-.price-card li.not::before{content:'-';color:#ccc}
+.price-card li.not::before{content:'Not included';color:#aaa}
 .price-card .card-cta{display:block;text-align:center;background:#0a0a0a;color:#f5f0e8;padding:.75rem;border-radius:8px;font-weight:700;font-size:.9rem;transition:background .2s}
 .price-card .card-cta:hover{background:#ff5a1f}
 .pricing-note{margin-top:2rem;font-size:.85rem;color:#999;line-height:1.6}
@@ -103,7 +111,7 @@ img{max-width:100%;display:block}
 
 /* PROCESS */
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
-.proc-card .no{font-family:'Space Mono',monospace;font-size:2.5rem;font-weight:700;color:rgba(255,90,31,.15);line-height:1;margin-bottom:.75rem}
+.proc-card .no{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:2.5rem;font-weight:700;color:rgba(255,90,31,.15);line-height:1;margin-bottom:.75rem}
 .proc-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
 .proc-card p{font-size:.85rem;color:#888;line-height:1.5}
 
@@ -114,16 +122,16 @@ img{max-width:100%;display:block}
 .test-card .quote{font-size:.95rem;color:rgba(245,240,232,.7);line-height:1.6;margin-bottom:1.5rem;font-style:italic}
 .test-card .quote::before{content:'"';font-size:2rem;color:#ff5a1f;font-weight:800;line-height:0;vertical-align:-8px;margin-right:4px}
 .test-card .author{font-weight:700;font-size:.85rem}
-.test-card .role{font-size:.75rem;color:rgba(245,240,232,.4);font-family:'Space Mono',monospace;margin-top:3px}
+.test-card .role{font-size:.75rem;color:rgba(245,240,232,.4);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:3px}
 
 /* CONTACT */
 .contact{background:#0a0a0a;color:#f5f0e8;text-align:center}
 .contact .section-sub{margin:0 auto 2.5rem;text-align:center}
 .contact-form{max-width:500px;margin:0 auto;display:grid;gap:1rem}
-.contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(245,240,232,.1);border-radius:8px;background:rgba(245,240,232,.04);color:#f5f0e8;font-family:'Archivo',sans-serif;font-size:.9rem;transition:border-color .2s}
+.field{display:grid;gap:.45rem;text-align:left}.field label{font-size:.78rem;font-weight:800;color:rgba(245,240,232,.72)}.contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(245,240,232,.18);border-radius:8px;background:rgba(245,240,232,.06);color:#f5f0e8;font-family:inherit;font-size:.9rem;transition:border-color .2s,background .2s}.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(245,240,232,.42)}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#ff5a1f}
 .contact-form textarea{resize:vertical;min-height:120px}
-.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.form-status{min-height:1.4rem;font-size:.9rem;color:#ff5a1f;font-weight:700;text-align:left}
 .contact-form button{width:100%}
 
 /* FOOTER */
@@ -140,9 +148,11 @@ img{max-width:100%;display:block}
   .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#0a0a0a;flex-direction:column;padding:1.5rem 2rem;gap:.8rem;border-top:1px solid rgba(245,240,232,.06)}
   .nav.open .nav-links{display:flex}
   .nav-links .nav-cta{text-align:center;padding:.7rem}
-  .hero{padding:4rem 1.5rem 3rem}
-  .hero h1{font-size:2.5rem;letter-spacing:-1px}
+  .hero{padding:4rem 1.5rem 3rem;min-height:auto}
+  .hero-inner{grid-template-columns:1fr;gap:2.4rem}
+  .hero h1{font-size:2.7rem;letter-spacing:-2px}
   .hero p{font-size:1rem}
+  .hero-visual{transform:none}.hero-shot.large{height:300px}.hero-shot.small{height:142px}.hero-shot.offset{transform:translateY(24px)}
   .portfolio-grid{grid-template-columns:1fr}
   .folio-thumb{height:180px}
   .srv-grid{grid-template-columns:1fr}
@@ -155,7 +165,7 @@ img{max-width:100%;display:block}
   .footer-inner{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){
-  .hero h1{font-size:1.8rem}
+  .hero h1{font-size:2.15rem}
   .hero-btns{flex-direction:column;align-items:stretch}
   .hero-btns a{text-align:center}
   .process-grid{grid-template-columns:1fr}
@@ -170,13 +180,13 @@ img{max-width:100%;display:block}
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="brand">KZ<span class="accent">N</span><span class="dot">·</span>Studio</a>
-    <button class="hamburger" onclick="this.closest('.nav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <button class="hamburger" onclick="this.closest('.nav').classList.toggle('open')" aria-label="Menu">Menu</button>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="nav-cta">Let's talk</a></li>
+      <li><a href="#contact" class="nav-cta">Start your project</a></li>
     </ul>
   </div>
 </nav>
@@ -184,12 +194,19 @@ img{max-width:100%;display:block}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="tag">◦ Web design studio · KwaZulu-Natal</div>
-    <h1>Websites that <span class="em">work</span> for small business.</h1>
-    <p>Custom-built, lightning-fast sites designed to make your KZN business look like the market leader. No setup fee - from R500/month.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Start your project</a>
-      <a href="#work" class="btn-ghost">See our work</a>
+    <div class="hero-copy">
+      <div class="tag">Web design studio · KwaZulu-Natal</div>
+      <h1>Small business sites with <span class="em">local bite.</span></h1>
+      <p>Sharp, fast websites for KZN businesses that need enquiries, bookings, and credibility.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Start your project</a>
+        <a href="#work" class="btn-ghost">See our work</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Selected KZN Web Studio demo previews">
+      <div class="hero-shot large"><img src="/img/umhlanga-dental.jpg" alt="Umhlanga Dental demo preview"></div>
+      <div class="hero-shot small offset"><img src="/img/drakensberg-stays.jpg" alt="Drakensberg Stays demo preview"></div>
+      <div class="hero-shot small"><img src="/img/spice-route-eats.jpg" alt="Spice Route Eats demo preview"></div>
     </div>
   </div>
 </section>
@@ -207,52 +224,51 @@ img{max-width:100%;display:block}
   <div class="section-inner">
     <div class="portfolio-header">
       <div>
-        <div class="section-tag">◦ Selected work</div>
-        <h2 class="section-title">Demo pages we've<br>built to show off.</h2>
+        <h2 class="section-title">Demo pages built<br>to prove the range.</h2>
       </div>
-      <a href="/demos/" class="portfolio-link">See all demos →</a>
+      <a href="/demos/" class="portfolio-link">See all demos</a>
     </div>
     <div class="portfolio-grid">
       <a href="/demos/umhlanga-dental" class="folio-card">
         <div class="folio-thumb"><img src="/img/umhlanga-dental.jpg" alt="Umhlanga Dental demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Umhlanga Dental</div><div class="cat">Healthcare · Booking site</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
       <a href="/demos/drakensberg-stays" class="folio-card">
         <div class="folio-thumb"><img src="/img/drakensberg-stays.jpg" alt="Drakensberg Stays demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Drakensberg Stays</div><div class="cat">Hospitality · Direct bookings</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
       <a href="/demos/spice-route-eats" class="folio-card">
         <div class="folio-thumb"><img src="/img/spice-route-eats.jpg" alt="Spice Route Eats demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Spice Route Eats</div><div class="cat">Restaurant · Online menu</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
       <a href="/demos/buildright-projects" class="folio-card">
         <div class="folio-thumb"><img src="/img/buildright-projects.jpg" alt="BuildRight Projects demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">BuildRight Projects</div><div class="cat">Construction · Lead gen</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
       <a href="/demos/coastal-law" class="folio-card">
         <div class="folio-thumb"><img src="/img/coastal-law.jpg" alt="Coastal Law Co. demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Coastal Law Co.</div><div class="cat">Professional · Trust-first</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
       <a href="/demos/zinto-fitness" class="folio-card">
         <div class="folio-thumb"><img src="/img/zinto-fitness.jpg" alt="Zinto Fitness demo screenshot" loading="lazy"></div>
         <div class="folio-info">
           <div><div class="name">Zinto Fitness</div><div class="cat">Fitness · Class signups</div></div>
-          <span class="arrow">↗</span>
+          <span class="arrow">View</span>
         </div>
       </a>
     </div>
@@ -262,7 +278,7 @@ img{max-width:100%;display:block}
 <!-- SERVICES -->
 <section class="section services-bg" id="services">
   <div class="section-inner">
-    <div class="section-tag">◦ What we do</div>
+    <p class="section-kicker">What we do</p>
     <h2 class="section-title">Four things.<br>All done properly.</h2>
     <div class="srv-grid">
       <div class="srv-card">
@@ -292,7 +308,6 @@ img{max-width:100%;display:block}
 <!-- PRICING -->
 <section class="section" id="pricing">
   <div class="section-inner">
-    <div class="section-tag">◦ Simple monthly pricing</div>
     <h2 class="section-title">No setup fee.<br>No big invoice.</h2>
     <p class="section-sub">Your website, live and hosted, billed simply every month.</p>
     <div class="pricing-grid">
@@ -310,7 +325,7 @@ img{max-width:100%;display:block}
           <li>Domain connection</li>
           <li class="not">Professional email not included</li>
         </ul>
-        <a href="#contact" class="card-cta">Get started</a>
+        <a href="#contact" class="card-cta">Start your project</a>
       </div>
       <div class="price-card pop">
         <div class="plan-name">Plus Plan</div>
@@ -326,17 +341,16 @@ img{max-width:100%;display:block}
           <li>Domain connection</li>
           <li>Up to 5 email mailboxes (@yourdomain)</li>
         </ul>
-        <a href="#contact" class="card-cta">Get started</a>
+        <a href="#contact" class="card-cta">Start your project</a>
       </div>
     </div>
-    <p class="pricing-note">Need something beyond these plans? We'll <a href="#contact">quote it separately</a>. <a href="/terms">Full terms & conditions →</a></p>
+    <p class="pricing-note">Need something beyond these plans? We can scope it after a short call. <a href="/terms">Full terms and conditions</a></p>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="section" id="about">
   <div class="section-inner">
-    <div class="section-tag">◦ How it works</div>
     <h2 class="section-title">From call to launch<br>in four steps.</h2>
     <div class="process-grid">
       <div class="proc-card">
@@ -366,7 +380,7 @@ img{max-width:100%;display:block}
 <!-- TESTIMONIALS -->
 <section class="section testimonials-bg">
   <div class="section-inner">
-    <div class="section-tag">◦ What clients say</div>
+    <p class="section-kicker">Client notes</p>
     <h2 class="section-title" style="color:#f5f0e8">Kind words from<br>real businesses.</h2>
     <div class="test-grid">
       <div class="test-card">
@@ -391,23 +405,24 @@ img{max-width:100%;display:block}
 <!-- CONTACT -->
 <section class="section contact" id="contact">
   <div class="section-inner">
-    <div class="section-tag">◦ Get in touch</div>
-    <h2 class="section-title" style="color:#f5f0e8">Let's build<br>something great.</h2>
-    <p class="section-sub" style="color:rgba(245,240,232,.45)">Book a free discovery call or drop us a message. No obligation, no jargon - just a conversation about your business.</p>
+    <h2 class="section-title" style="color:#f5f0e8">Start with a<br>short brief.</h2>
+    <p class="section-sub" style="color:rgba(245,240,232,.6)">Tell us what you need. We will reply with next steps and a clear recommendation.</p>
     <form class="contact-form" id="contactForm">
       <div class="row">
-        <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
-        <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+        <div class="field"><label for="name">Your name</label><input id="name" type="text" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email address</label><input id="email" type="email" name="email" autocomplete="email" required></div>
       </div>
-      <input type="text" name="business" placeholder="Business name" aria-label="Business name">
-      <textarea name="message" placeholder="Tell us about your project..." required aria-label="Message"></textarea>
+      <div class="field"><label for="business">Business name</label><input id="business" type="text" name="business" autocomplete="organization"></div>
+      <div class="field"><label for="message">Project brief</label><textarea id="message" name="message" required></textarea></div>
+      <div class="form-status" id="formStatus" aria-live="polite"></div>
       <button type="submit" class="btn-primary" id="contactBtn">Send message</button>
     </form>
     <script>
     document.getElementById('contactForm').addEventListener('submit',async function(e){
       e.preventDefault();
       const btn=document.getElementById('contactBtn');
-      btn.disabled=true;btn.textContent='Sending...';
+      const status=document.getElementById('formStatus');
+      btn.disabled=true;btn.textContent='Sending...';status.textContent='Sending your message...';
       try{
         const res=await fetch('/api/contact',{method:'POST',body:new FormData(this)});
         const data=await res.json();
@@ -415,11 +430,11 @@ img{max-width:100%;display:block}
           this.innerHTML='<p style="text-align:center;color:#ff5a1f;font-weight:700;font-size:1.1rem;padding:2rem 0">'+data.message+'</p>';
         }else{
           btn.disabled=false;btn.textContent='Send message';
-          alert(data.message||'Something went wrong. Please try again.');
+          status.textContent=data.message||'Something went wrong. Please try again.';
         }
       }catch{
         btn.disabled=false;btn.textContent='Send message';
-        alert('Network error. Please try again.');
+        status.textContent='Network error. Please try again.';
       }
     });
     </script>
@@ -429,7 +444,7 @@ img{max-width:100%;display:block}
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="copy">© 2025 KZN Web Studio</div>
+    <div class="copy">© 2026 KZN Web Studio</div>
     <div class="footer-links">
       <a href="/pricing">Plans</a>
       <a href="/terms">Terms</a>
