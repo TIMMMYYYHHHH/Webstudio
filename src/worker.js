@@ -20,7 +20,14 @@ export default {
       }
     }
 
-    return addHeaders(await env.ASSETS.fetch(request));
+    const response = await env.ASSETS.fetch(request);
+    if (response.status === 404) {
+      const notFoundUrl = new URL(request.url);
+      notFoundUrl.pathname = '/404.html';
+      const notFound = await env.ASSETS.fetch(notFoundUrl);
+      return addHeaders(new Response(notFound.body, { status: 404, headers: notFound.headers }));
+    }
+    return addHeaders(response);
   },
 };
 
@@ -32,6 +39,14 @@ async function handleContact(request, env) {
 
   try {
     const data = await request.formData();
+
+    if (data.get('website')) {
+      return new Response(
+        JSON.stringify({ success: true, message: "Thanks! We'll be in touch within 24 hours." }),
+        { status: 200, headers }
+      );
+    }
+
     const name = data.get('name') || '';
     const email = data.get('email') || '';
     const business = data.get('business') || '';
